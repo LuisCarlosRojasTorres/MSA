@@ -82,6 +82,19 @@ def get_restaurant_by_index(restaurant_id):
         abort(404)
     return jsonify({"Restaurant selected by Id": restaurant[0]})
 
+@app.route("/todo/api/restaurants/<restaurant_addr>", methods=["GET"])
+def get_restaurant_by_City(restaurant_addr):
+    print(" - AddressLocality:" + restaurant_addr)
+    ans = list()
+    for restaurant in restaurantsList:
+        if restaurant["address"]["addressLocality"] == restaurant_addr:
+            print(" - data: " + restaurant["address"]["addressLocality"])
+            ans.append(restaurant)
+            
+    if len(restaurant) == 0:
+        abort(404)
+    return jsonify({"Restaurant selected by Id": ans})
+
 @app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({"error": "Restaurant Not found!"}), 404)
