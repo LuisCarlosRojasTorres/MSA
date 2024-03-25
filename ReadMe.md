@@ -1,11 +1,22 @@
 # Arquitetura de Serviços - Trabalho 2
+
+<!-- vscode-markdown-toc -->
+* 1. [Questões conceituais](#Questesconceituais)
+* 2. [Questões práticas](#Questesprticas)
+* 3. [Anexo](#Anexo)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
 Professor: Leonardo Guerreiro Azevedo
 Integrantes: 
 - Breno Rage Aboud
 - Wesley Santos da Silva
 - Luis Carlos Rojas Torres
 
-## Questões conceituais
+##  1. <a name='Questesconceituais'></a>Questões conceituais
 1. Defina serviço RESTful.
 	- Rpta...
 2. Liste e explique os quatro principais princípios de serviços RESTful
@@ -22,7 +33,7 @@ Integrantes:
 4. Na opinião do grupo, qual tipo de serviço é mais fácil e rápido de implementar? Justifique.
 	- Rpta...
 
-## Questões práticas
+##  2. <a name='Questesprticas'></a>Questões práticas
 
 1. Modele a estrutura dos dados providos pelo serviço, por exemplo, um modelo Entidade-Relacionamento ou um modelo de classes UML.
 2. Implemente um serviço Web RESTful com operações para:
@@ -93,7 +104,7 @@ def get_restaurants(task_id):
 #Insert Code HERE...
 ```
 
-## Anexo
+##  3. <a name='Anexo'></a>Anexo
 Codigo do backend:
 
 ``` python
