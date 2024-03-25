@@ -84,16 +84,14 @@ def get_restaurant_by_index(restaurant_id):
 
 @app.route("/todo/api/restaurants/<restaurant_addr>", methods=["GET"])
 def get_restaurant_by_City(restaurant_addr):
-    print(" - AddressLocality:" + restaurant_addr)
     ans = list()
     for restaurant in restaurantsList:
         if restaurant["address"]["addressLocality"] == restaurant_addr:
-            print(" - data: " + restaurant["address"]["addressLocality"])
             ans.append(restaurant)
             
     if len(restaurant) == 0:
         abort(404)
-    return jsonify({"Restaurant selected by Id": ans})
+    return jsonify({"Restaurant selected by addressLocality": ans})
 
 @app.errorhandler(404)
 def not_found(error):

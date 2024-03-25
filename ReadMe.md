@@ -1,22 +1,20 @@
-# Arquitetura de Serviços - Trabalho 2
-
 <!-- vscode-markdown-toc -->
-* 1. [Questões conceituais](#Questesconceituais)
-* 2. [Questões práticas](#Questesprticas)
-* 3. [Anexo](#Anexo)
+* 1. [ Questões conceituais](#Questesconceituais)
+* 2. [ Questões práticas](#Questesprticas)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
 	autoSave=true
 	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+<!-- /vscode-markdown-toc --># Arquitetura de Serviços - Trabalho 2
+
 Professor: Leonardo Guerreiro Azevedo
 Integrantes: 
 - Breno Rage Aboud
 - Wesley Santos da Silva
 - Luis Carlos Rojas Torres
 
-##  1. <a name='Questesconceituais'></a>Questões conceituais
+##  1. <a name='Questesconceituais'></a> Questões conceituais
 1. Defina serviço RESTful.
 	- Rpta...
 2. Liste e explique os quatro principais princípios de serviços RESTful
@@ -33,7 +31,7 @@ Integrantes:
 4. Na opinião do grupo, qual tipo de serviço é mais fácil e rápido de implementar? Justifique.
 	- Rpta...
 
-##  2. <a name='Questesprticas'></a>Questões práticas
+##  2. <a name='Questesprticas'></a> Questões práticas
 
 1. Modele a estrutura dos dados providos pelo serviço, por exemplo, um modelo Entidade-Relacionamento ou um modelo de classes UML.
 2. Implemente um serviço Web RESTful com operações para:
@@ -81,12 +79,21 @@ Integrantes:
      - Output no navegador:  
     ![Restaurant By Index](/images/RestaurantByIndex.png)
 
-   - [ ] Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade:
+   - [x] Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade:
 	``` py
-	def GetRestaurant(cidade):
-		#Insert Code HERE
-		return
+    @app.route("/todo/api/restaurants/<restaurant_addr>", methods=["GET"])
+    def get_restaurant_by_City(restaurant_addr):
+        ans = list()
+        for restaurant in restaurantsList:
+            if restaurant["address"]["addressLocality"] == restaurant_addr:
+                ans.append(restaurant)
+            
+        if len(restaurant) == 0:
+            abort(404)
+        return jsonify({"Restaurant selected by addressLocality": ans})
 	```
+     - Output no navegador:  
+    ![Restaurant By City](/images/GetByCity.png)         
    - [x] Atualizar restaurante, por exemplo, atualizar o endereço do restaurante:
 	``` py
     @app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["PUT"])
@@ -142,13 +149,14 @@ Integrantes:
      - Output no navegador:  
      ![Output](/images/Delete3.png)
     
-3. Opcional - Utilize um banco de dados para armazenar os dados.
+## Utilize um banco de dados para armazenar os dados.
+
 ``` py
 def HandleDatabase(id):
 	#Insert Code HERE	
 	return
 ```
-1. Implemente um cliente (por exemplo, um script em Python usando a biblioteca requests) que invoque este serviço simulando operações para inserção, consulta, atualização e remoção.
+### Implemente um cliente (por exemplo, um script em Python usando a biblioteca requests) que invoque este serviço simulando operações para inserção, consulta, atualização e remoção.
 
 ``` py
 import requests
@@ -173,81 +181,162 @@ def get_restaurants(task_id):
 #Insert Code HERE...
 ```
 
-##  3. <a name='Anexo'></a>Anexo
-Codigo do backend:
+## Anexo
+
+### Codigo Completo do backend:
 
 ``` python
 from flask import Flask, jsonify, abort, make_response, request
-#Codigo utilizado na aula
-
 
 app = Flask(__name__)
 HOST = "0.0.0.0"
 PORT = 4999
-tasks = [
+
+restaurantsList = [
 {
 "id": 1,
-"title": "Buy groceries",
-"description": "Milk, Cheese, Pizza, Fruit, Tyleno",
-"done": False
+"name": "Restaurant1",
+"address": {
+    "postalCode":"111",
+    "streetAddress":"Rua Um número 1111",
+    "addressLocality":"Cidade1",
+    "addressRegion":"Region1",
+    "addressCountry":"Country1",
+},
+"url": "www.rest1.com.br",
+"menu": "www.rest1.com.br/menu",
+"telephone": "111-1111",
+"priceRange": "$$11-111"
 },
 {
 "id": 2,
-"title": "Learn Python",
-"description": "Need to find a good Python tutorial on the Web",
-"done": False
-}
+"name": "Restaurant2",
+"address": {
+    "postalCode":"222",
+    "streetAddress":"Rua Dois número 2222",
+    "addressLocality":"Cidade2",
+    "addressRegion":"Region2",
+    "addressCountry":"Country2",
+},
+"url": "www.rest2.com.br",
+"menu": "www.rest2.com.br/menu",
+"telephone": "222-2222",
+"priceRange": "$$22-222"
+},
+{
+"id": 3,
+"name": "Restaurant3",
+"address": {
+    "postalCode":"111",
+    "streetAddress":"Rua Tres número 3333",
+    "addressLocality":"Cidade1",
+    "addressRegion":"Region1",
+    "addressCountry":"Country1",
+},
+"url": "www.rest3.com.br",
+"menu": "www.rest3.com.br/menu",
+"telephone": "333-3333",
+"priceRange": "$$33-333"
+},
+{
+"id": 4,
+"name": "Restaurant4",
+"address": {
+    "postalCode":"444",
+    "streetAddress":"Rua Quatro número 4444",
+    "addressLocality":"Cidade4",
+    "addressRegion":"Region4",
+    "addressCountry":"Country4",
+},
+"url": "www.rest4.com.br",
+"menu": "www.rest4.com.br/menu",
+"telephone": "444-4444",
+"priceRange": "$$44-444"
+},
 ]
 
 @app.route('/')
 def index():
-    return "Hello, World!"
+    return "Trabalho N2! Arquitetura de Microserviços"
 
-@app.route("/todo/api/tasks", methods=["GET"])
-def get_tasks():
-    return jsonify({"tasks": tasks})
+@app.route("/todo/api/restaurants", methods=["GET"])
+def get_restaurants():
+    return jsonify({"Lista de Restaurants": restaurantsList})
 
-@app.route("/todo/api/tasks/<int:task_id>", methods=["GET"])
-def get_task(task_id):
-    task = [task for task in tasks if task["id"] == task_id]
-    if len(task) == 0:
+@app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["GET"])
+def get_restaurant_by_index(restaurant_id):
+    restaurant = [restaurant for restaurant in restaurantsList if restaurant["id"] == restaurant_id]
+    if len(restaurant) == 0:
         abort(404)
-    return jsonify({"task": task[0]})
+    return jsonify({"Restaurant selected by Id": restaurant[0]})
+
+@app.route("/todo/api/restaurants/<restaurant_addr>", methods=["GET"])
+def get_restaurant_by_City(restaurant_addr):
+    ans = list()
+    for restaurant in restaurantsList:
+        if restaurant["address"]["addressLocality"] == restaurant_addr:
+            ans.append(restaurant)
+            
+    if len(restaurant) == 0:
+        abort(404)
+    return jsonify({"Restaurant selected by addressLocality": ans})
 
 @app.errorhandler(404)
 def not_found(error):
-    return make_response(jsonify({"error": "Not found"}), 404)
+    return make_response(jsonify({"error": "Restaurant Not found!"}), 404)
 
-@app.route("/todo/api/tasks", methods=["POST"])
-def create_task():
-    if not request.json or not "title" in request.json:
+@app.route("/todo/api/restaurants", methods=["POST"])
+def create_restaurant():
+    if not request.json or not "name" in request.json:
         abort(400)
-    task = {
-            "id": tasks[-1]["id"] + 1,
-            "title": request.json["title"],
-            "description": request.json.get("description", ""),
-            "done": False
+    newRestaurant = {
+            "id": restaurantsList[-1]["id"] + 1,
+            "name": request.json["name"],
+            "address": request.json.get("address", ""),
+            "url": request.json.get("url", ""),
+            "menu": request.json.get("menu", ""),
+            "telephone": request.json.get("telephone", ""),
+            "priceRange": request.json.get("priceRange", ""),
         }
-    tasks.append(task)
-    return jsonify({"task": task}), 201
+    restaurantsList.append(newRestaurant)
+    return jsonify({"Created Restaurant": newRestaurant}), 201
 
-@app.route("/todo/api/tasks/<int:task_id>", methods=["PUT"])
-def update_task(task_id):
-    task = [task for task in tasks if task["id"] == task_id]
-    if len(task) == 0:
+@app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["PUT"])
+def update_restaurant(restaurant_id):
+    restaurant = [restaurant for restaurant in restaurantsList if restaurant["id"] == restaurant_id]
+    if len(restaurant) == 0:
         abort(404)
-    if not request.json:
+    if not request.json or not "name" in request.json:
         abort(400)
-    if "title" in request.json and type(request.json["title"]) != str:
+    if "name" in request.json and type(request.json["name"]) != str:
         abort(400)
-    if "description" in request.json and type(request.json["description"]) is not str:
+    if "address" in request.json and type(request.json["address"]) != dict:
         abort(400)
-    if "done" in request.json and type(request.json["done"]) is not bool:
+    if "url" in request.json and type(request.json["url"]) is not str:
         abort(400)
-    task[0]["title"] = request.json.get("title", task[0]["title"])
-    task[0]["description"] = request.json.get("description", task[0]["description"])
-    task[0]["done"] = request.json.get("done", task[0]["done"])
-    return jsonify({"task": task[0]})
+    if "menu" in request.json and type(request.json["menu"]) is not str:
+        abort(400)
+    if "telephone" in request.json and type(request.json["telephone"]) is not str:
+        abort(400)
+    if "priceRange" in request.json and type(request.json["priceRange"]) is not str:
+        abort(400)
+
+    restaurant[0]["name"] = request.json.get("name", restaurant[0]["name"])
+    restaurant[0]["address"] = request.json.get("address", restaurant[0]["address"])
+    restaurant[0]["url"] = request.json.get("url", restaurant[0]["url"])
+    restaurant[0]["menu"] = request.json.get("menu", restaurant[0]["menu"])
+    restaurant[0]["telephone"] = request.json.get("telephone", restaurant[0]["telephone"])
+    restaurant[0]["priceRange"] = request.json.get("priceRange", restaurant[0]["priceRange"])
+    
+    return jsonify({"Updated restaurant": restaurant[0]})
+
+@app.route("/todo/api/restaurants/<int:restaurants_id>", methods=["DELETE"])
+def delete_restaurants(restaurants_id):
+    restaurants = [restaurants for restaurants in restaurantsList if restaurants["id"] == restaurants_id]
+    if len(restaurants) == 0:
+        abort(404)
+    restaurantsList.remove(restaurants[0])
+    return jsonify({"Result Of Deletion by Id": True})
 
 if __name__ == "__main__":
     app.run(host=HOST, port=PORT, debug=True)
