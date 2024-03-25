@@ -87,5 +87,13 @@ def update_task(task_id):
     task[0]["done"] = request.json.get("done", task[0]["done"])
     return jsonify({"task": task[0]})
 
+@app.route("/todo/api/tasks/<int:task_id>", methods=["DELETE"])
+def delete_task(task_id):
+    task = [task for task in restaurantsList if task["id"] == task_id]
+    if len(task) == 0:
+        abort(404)
+    restaurantsList.remove(task[0])
+    return jsonify({"result": True})
+
 if __name__ == "__main__":
     app.run(host=HOST, port=PORT, debug=True)
