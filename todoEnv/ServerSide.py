@@ -87,13 +87,13 @@ def update_task(task_id):
     task[0]["done"] = request.json.get("done", task[0]["done"])
     return jsonify({"task": task[0]})
 
-@app.route("/todo/api/tasks/<int:task_id>", methods=["DELETE"])
-def delete_task(task_id):
-    task = [task for task in restaurantsList if task["id"] == task_id]
-    if len(task) == 0:
+@app.route("/todo/api/restaurants/<int:restaurants_id>", methods=["DELETE"])
+def delete_restaurants(restaurants_id):
+    restaurants = [restaurants for restaurants in restaurantsList if restaurants["id"] == restaurants_id]
+    if len(restaurants) == 0:
         abort(404)
-    restaurantsList.remove(task[0])
-    return jsonify({"result": True})
+    restaurantsList.remove(restaurants[0])
+    return jsonify({"Result Of Deletion by Id": True})
 
 if __name__ == "__main__":
     app.run(host=HOST, port=PORT, debug=True)

@@ -79,10 +79,15 @@ Integrantes:
 	```
    - apagar um restaurante pelo seu `id`
 	``` py
-	def DeleteRestaurant(id):
-		#Insert Code HERE
-		return
+    @app.route("/todo/api/restaurants/<int:restaurants_id>", methods=["DELETE"])
+    def delete_restaurants(restaurants_id):
+        restaurants = [restaurants for restaurants in restaurantsList if restaurants["id"] == restaurants_id]
+        if len(restaurants) == 0:
+            abort(404)
+        restaurantsList.remove(restaurants[0])
+        return jsonify({"Result Of Deletion by Id": True})
 	```
+    
 3. Opcional - Utilize um banco de dados para armazenar os dados.
 ``` py
 def HandleDatabase(id):
