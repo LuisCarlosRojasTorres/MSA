@@ -37,37 +37,47 @@ Integrantes:
 
 1. Modele a estrutura dos dados providos pelo serviço, por exemplo, um modelo Entidade-Relacionamento ou um modelo de classes UML.
 2. Implemente um serviço Web RESTful com operações para:
-   1. inserir um restaurante:
-	``` py
-	def InsertRestaurant(restaurantAsJsonObject):
+   - inserir um restaurante:
+    ``` py
+	def insert_Restaurant(restaurantAsJsonObject):
 		#Insert Code HERE
 		return
 	```
-   2. retornar todos os restaurantes:
+    
+   - retornar todos os restaurantes:
 	``` py
-	def GetRestaurants():
-		#Insert Code HERE
-		return
+	@app.route("/todo/api/restaurants", methods=["GET"])
+    def get_restaurants():
+        return jsonify({"List of Restaurants": restaurantsList})
 	```
-   3. retornar um restaurante pelo `id`:
+     - Output no navegador:
+    ![Lista de Restaurantes](/images/ListOfRestaurants.png)
+
+   - retornar um restaurante pelo `id`:
 	``` py
-	def GetRestaurantById(id):
-		#Insert Code HERE
-		return
+    @app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["GET"])
+    def get_restaurant_by_index(restaurant_id):
+        restaurant = [restaurant for restaurant in restaurantsList if restaurant["id"] == restaurant_id]
+        if len(restaurant) == 0:
+            abort(404)
+        return jsonify({"restaurant selected by Id": restaurant[0]})
 	```
-   4. consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade:
+     - Output no navegador:
+    ![Restaurant By Index](/images/RestaurantByIndex.png)
+
+   - consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade:
 	``` py
 	def GetRestaurant(cidade):
 		#Insert Code HERE
 		return
 	```
-   5. atualizar restaurante, por exemplo, atualizar o endereço do restaurante:
+   - atualizar restaurante, por exemplo, atualizar o endereço do restaurante:
 	``` py
 	def UpdateRestaurant(restaurantAsJsonObject):
 		#Insert Code HERE
 		return
 	```
-   6. apagar um restaurante pelo seu `id`
+   - apagar um restaurante pelo seu `id`
 	``` py
 	def DeleteRestaurant(id):
 		#Insert Code HERE
@@ -75,11 +85,11 @@ Integrantes:
 	```
 3. Opcional - Utilize um banco de dados para armazenar os dados.
 ``` py
-	def HandleDatabase(id):
-		#Insert Code HERE
-		return
+def HandleDatabase(id):
+	#Insert Code HERE	
+	return
 ```
-4. Implemente um cliente (por exemplo, um script em Python usando a biblioteca requests) que invoque este serviço simulando operações para inserção, consulta, atualização e remoção.
+1. Implemente um cliente (por exemplo, um script em Python usando a biblioteca requests) que invoque este serviço simulando operações para inserção, consulta, atualização e remoção.
 
 ``` py
 import requests
