@@ -87,18 +87,18 @@ Integrantes:
 		#Insert Code HERE
 		return
 	```
-   - [ ] Atualizar restaurante, por exemplo, atualizar o endereço do restaurante:
+   - [x] Atualizar restaurante, por exemplo, atualizar o endereço do restaurante:
 	``` py
     @app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["PUT"])
-    def update_task(restaurant_id):
-        restaurant = [restaurant for restaurant in restaurant if restaurant["id"] == restaurant_id]
+    def update_restaurant(restaurant_id):
+        restaurant = [restaurant for restaurant in restaurantsList if restaurant["id"] == restaurant_id]
         if len(restaurant) == 0:
             abort(404)
-        if not request.json:
+        if not request.json or not "name" in request.json:
             abort(400)
         if "name" in request.json and type(request.json["name"]) != str:
             abort(400)
-        if "address" in request.json and type(request.json["address"]) is not str:
+        if "address" in request.json and type(request.json["address"]) != dict:
             abort(400)
         if "url" in request.json and type(request.json["url"]) is not str:
             abort(400)
@@ -118,6 +118,13 @@ Integrantes:
     
         return jsonify({"Updated restaurant": restaurant[0]})
 	```
+     - Lista de Restaurantes antes del PUT:  
+     ![Lista de Restaurantes](/images/PUT01.png)
+     - PUT em Postman:  
+     ![PUT in Postman](/images/PUT02.png)
+     - Lista de Restaurantes después del PUT:  
+     ![Lista de Restaurantes](/images/PUT03.png)
+
    - [x] Apagar um restaurante pelo seu `id`
 	``` py
     @app.route("/todo/api/restaurants/<int:restaurants_id>", methods=["DELETE"])

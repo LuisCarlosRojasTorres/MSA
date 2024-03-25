@@ -35,26 +35,56 @@ restaurantsList = [
 "telephone": "222-2222",
 "priceRange": "$$22-222"
 },
+{
+"id": 3,
+"name": "Restaurant3",
+"address": {
+    "postalCode":"111",
+    "streetAddress":"Rua Tres número 3333",
+    "addressLocality":"Cidade1",
+    "addressRegion":"Region1",
+    "addressCountry":"Country1",
+},
+"url": "www.rest3.com.br",
+"menu": "www.rest3.com.br/menu",
+"telephone": "333-3333",
+"priceRange": "$$33-333"
+},
+{
+"id": 4,
+"name": "Restaurant4",
+"address": {
+    "postalCode":"444",
+    "streetAddress":"Rua Quatro número 4444",
+    "addressLocality":"Cidade4",
+    "addressRegion":"Region4",
+    "addressCountry":"Country4",
+},
+"url": "www.rest4.com.br",
+"menu": "www.rest4.com.br/menu",
+"telephone": "444-4444",
+"priceRange": "$$44-444"
+},
 ]
 
 @app.route('/')
 def index():
-    return "Trabalho N2!"
+    return "Trabalho N2! Arquitetura de Microserviços"
 
 @app.route("/todo/api/restaurants", methods=["GET"])
 def get_restaurants():
-    return jsonify({"List of Restaurants": restaurantsList})
+    return jsonify({"Lista de Restaurants": restaurantsList})
 
 @app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["GET"])
 def get_restaurant_by_index(restaurant_id):
     restaurant = [restaurant for restaurant in restaurantsList if restaurant["id"] == restaurant_id]
     if len(restaurant) == 0:
         abort(404)
-    return jsonify({"restaurant selected by Id": restaurant[0]})
+    return jsonify({"Restaurant selected by Id": restaurant[0]})
 
 @app.errorhandler(404)
 def not_found(error):
-    return make_response(jsonify({"error": "Not found"}), 404)
+    return make_response(jsonify({"error": "Restaurant Not found!"}), 404)
 
 @app.route("/todo/api/restaurants", methods=["POST"])
 def create_restaurant():
@@ -74,14 +104,14 @@ def create_restaurant():
 
 @app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["PUT"])
 def update_restaurant(restaurant_id):
-    restaurant = [restaurant for restaurant in restaurant if restaurant["id"] == restaurant_id]
+    restaurant = [restaurant for restaurant in restaurantsList if restaurant["id"] == restaurant_id]
     if len(restaurant) == 0:
         abort(404)
     if not request.json or not "name" in request.json:
         abort(400)
     if "name" in request.json and type(request.json["name"]) != str:
         abort(400)
-    if "address" in request.json and type(request.json["address"]) is not str:
+    if "address" in request.json and type(request.json["address"]) != dict:
         abort(400)
     if "url" in request.json and type(request.json["url"]) is not str:
         abort(400)
