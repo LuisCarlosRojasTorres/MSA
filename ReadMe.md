@@ -1,12 +1,16 @@
+# Arquitetura de Serviços - Trabalho 2
+
 <!-- vscode-markdown-toc -->
 * 1. [ Questões conceituais](#Questesconceituais)
 * 2. [ Questões práticas](#Questesprticas)
+* 2. [ Anexo](#Anexo)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
 	autoSave=true
 	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc --># Arquitetura de Serviços - Trabalho 2
+<!-- /vscode-markdown-toc -->
+
 
 Professor: Leonardo Guerreiro Azevedo
 Integrantes: 
@@ -33,7 +37,9 @@ Integrantes:
 
 ##  2. <a name='Questesprticas'></a> Questões práticas
 
-1. Modele a estrutura dos dados providos pelo serviço, por exemplo, um modelo Entidade-Relacionamento ou um modelo de classes UML.
+1. (TODO) Modele a estrutura dos dados providos pelo serviço, por exemplo, um modelo Entidade-Relacionamento ou um modelo de classes UML.
+
+  
 2. Implemente um serviço Web RESTful com operações para:
    - [x] Inserir um restaurante:
     ``` py
@@ -93,7 +99,8 @@ Integrantes:
         return jsonify({"Restaurant selected by addressLocality": ans})
 	```
      - Output no navegador:  
-    ![Restaurant By City](/images/GetByCity.png)         
+    ![Restaurant By City](/images/GetByCity.png)      
+
    - [x] Atualizar restaurante, por exemplo, atualizar o endereço do restaurante:
 	``` py
     @app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["PUT"])
@@ -149,14 +156,14 @@ Integrantes:
      - Output no navegador:  
      ![Output](/images/Delete3.png)
     
-## Utilize um banco de dados para armazenar os dados.
+3. Opcional Utilize um banco de dados para armazenar os dados.
 
 ``` py
 def HandleDatabase(id):
 	#Insert Code HERE	
 	return
 ```
-### Implemente um cliente (por exemplo, um script em Python usando a biblioteca requests) que invoque este serviço simulando operações para inserção, consulta, atualização e remoção.
+4. Implemente um cliente (por exemplo, um script em Python usando a biblioteca requests) que invoque este serviço simulando operações para inserção, consulta, atualização e remoção.
 
 ``` py
 import requests
@@ -180,10 +187,9 @@ def get_restaurants(task_id):
 
 #Insert Code HERE...
 ```
+##  3. <a name='Anexo'></a> Anexo
 
-## Anexo
-
-### Codigo Completo do backend:
+- Codigo Completo do backend:
 
 ``` python
 from flask import Flask, jsonify, abort, make_response, request
