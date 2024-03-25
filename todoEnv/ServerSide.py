@@ -57,8 +57,8 @@ def not_found(error):
     return make_response(jsonify({"error": "Not found"}), 404)
 
 @app.route("/todo/api/restaurants", methods=["POST"])
-def create_task():
-    if not request.json or not "title" in request.json:
+def create_restaurant():
+    if not request.json or not "name" in request.json:
         abort(400)
     newRestaurant = {
             "id": restaurantsList[-1]["id"] + 1,
@@ -73,11 +73,11 @@ def create_task():
     return jsonify({"Created Restaurant": newRestaurant}), 201
 
 @app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["PUT"])
-def update_task(restaurant_id):
+def update_restaurant(restaurant_id):
     restaurant = [restaurant for restaurant in restaurant if restaurant["id"] == restaurant_id]
     if len(restaurant) == 0:
         abort(404)
-    if not request.json:
+    if not request.json or not "name" in request.json:
         abort(400)
     if "name" in request.json and type(request.json["name"]) != str:
         abort(400)

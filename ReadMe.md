@@ -37,7 +37,7 @@ Integrantes:
 
 1. Modele a estrutura dos dados providos pelo serviço, por exemplo, um modelo Entidade-Relacionamento ou um modelo de classes UML.
 2. Implemente um serviço Web RESTful com operações para:
-   - Inserir um restaurante:
+   - [x] Inserir um restaurante:
     ``` py
     @app.route("/todo/api/restaurants", methods=["POST"])
     def create_task():
@@ -55,17 +55,21 @@ Integrantes:
         restaurantsList.append(newRestaurant)
         return jsonify({"Created Restaurant": newRestaurant}), 201
 	```
-    
-   - Retornar todos os restaurantes:
+     - Post in Postman:  
+     ![Post in Postman](/images/PostRestaurant2.png)
+     - Output no navegador:  
+     ![Output](/images/PostRestaurant.png)
+
+   - [x] Retornar todos os restaurantes:
 	``` py
 	@app.route("/todo/api/restaurants", methods=["GET"])
     def get_restaurants():
         return jsonify({"List of Restaurants": restaurantsList})
 	```
      - Output no navegador:  
-    ![Lista de Restaurantes](/images/ListOfRestaurants.png)
+     ![Lista de Restaurantes](/images/ListOfRestaurants.png)
 
-   - Retornar um restaurante pelo `id`:
+   - [x] Retornar um restaurante pelo `id`:
 	``` py
     @app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["GET"])
     def get_restaurant_by_index(restaurant_id):
@@ -77,13 +81,13 @@ Integrantes:
      - Output no navegador:  
     ![Restaurant By Index](/images/RestaurantByIndex.png)
 
-   - Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade:
+   - [ ] Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade:
 	``` py
 	def GetRestaurant(cidade):
 		#Insert Code HERE
 		return
 	```
-   - Atualizar restaurante, por exemplo, atualizar o endereço do restaurante:
+   - [ ] Atualizar restaurante, por exemplo, atualizar o endereço do restaurante:
 	``` py
     @app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["PUT"])
     def update_task(restaurant_id):
@@ -114,7 +118,7 @@ Integrantes:
     
         return jsonify({"Updated restaurant": restaurant[0]})
 	```
-   - Apagar um restaurante pelo seu `id`
+   - [x] Apagar um restaurante pelo seu `id`
 	``` py
     @app.route("/todo/api/restaurants/<int:restaurants_id>", methods=["DELETE"])
     def delete_restaurants(restaurants_id):
@@ -124,6 +128,12 @@ Integrantes:
         restaurantsList.remove(restaurants[0])
         return jsonify({"Result Of Deletion by Id": True})
 	```
+     - Post in Postman:  
+     ![Deleted in Postman](/images/Delete1.png)
+     - Output in Postman:  
+     ![Output](/images/Delete2.png)
+     - Output no navegador:  
+     ![Output](/images/Delete3.png)
     
 3. Opcional - Utilize um banco de dados para armazenar os dados.
 ``` py
