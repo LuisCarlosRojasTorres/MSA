@@ -37,14 +37,26 @@ Integrantes:
 
 1. Modele a estrutura dos dados providos pelo serviço, por exemplo, um modelo Entidade-Relacionamento ou um modelo de classes UML.
 2. Implemente um serviço Web RESTful com operações para:
-   - inserir um restaurante:
+   - Inserir um restaurante:
     ``` py
-	def insert_Restaurant(restaurantAsJsonObject):
-		#Insert Code HERE
-		return
+    @app.route("/todo/api/restaurants", methods=["POST"])
+    def create_task():
+        if not request.json or not "title" in request.json:
+            abort(400)
+        newRestaurant = {
+            "id": restaurantsList[-1]["id"] + 1,
+            "name": request.json["name"],
+            "address": request.json.get("address", ""),
+            "url": request.json.get("url", ""),
+            "menu": request.json.get("menu", ""),
+            "telephone": request.json.get("telephone", ""),
+            "priceRange": request.json.get("priceRange", ""),
+        }
+        restaurantsList.append(newRestaurant)
+        return jsonify({"Created Restaurant": newRestaurant}), 201
 	```
     
-   - retornar todos os restaurantes:
+   - Retornar todos os restaurantes:
 	``` py
 	@app.route("/todo/api/restaurants", methods=["GET"])
     def get_restaurants():
@@ -53,7 +65,7 @@ Integrantes:
      - Output no navegador:  
     ![Lista de Restaurantes](/images/ListOfRestaurants.png)
 
-   - retornar um restaurante pelo `id`:
+   - Retornar um restaurante pelo `id`:
 	``` py
     @app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["GET"])
     def get_restaurant_by_index(restaurant_id):
@@ -65,19 +77,44 @@ Integrantes:
      - Output no navegador:  
     ![Restaurant By Index](/images/RestaurantByIndex.png)
 
-   - consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade:
+   - Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade:
 	``` py
 	def GetRestaurant(cidade):
 		#Insert Code HERE
 		return
 	```
-   - atualizar restaurante, por exemplo, atualizar o endereço do restaurante:
+   - Atualizar restaurante, por exemplo, atualizar o endereço do restaurante:
 	``` py
-	def UpdateRestaurant(restaurantAsJsonObject):
-		#Insert Code HERE
-		return
+    @app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["PUT"])
+    def update_task(restaurant_id):
+        restaurant = [restaurant for restaurant in restaurant if restaurant["id"] == restaurant_id]
+        if len(restaurant) == 0:
+            abort(404)
+        if not request.json:
+            abort(400)
+        if "name" in request.json and type(request.json["name"]) != str:
+            abort(400)
+        if "address" in request.json and type(request.json["address"]) is not str:
+            abort(400)
+        if "url" in request.json and type(request.json["url"]) is not str:
+            abort(400)
+        if "menu" in request.json and type(request.json["menu"]) is not str:
+            abort(400)
+        if "telephone" in request.json and type(request.json["telephone"]) is not str:
+            abort(400)
+        if "priceRange" in request.json and type(request.json["priceRange"]) is not str:
+            abort(400)
+
+        restaurant[0]["name"] = request.json.get("name", restaurant[0]["name"])
+        restaurant[0]["address"] = request.json.get("address", restaurant[0]["address"])
+        restaurant[0]["url"] = request.json.get("url", restaurant[0]["url"])
+        restaurant[0]["menu"] = request.json.get("menu", restaurant[0]["menu"])
+        restaurant[0]["telephone"] = request.json.get("telephone", restaurant[0]["telephone"])
+        restaurant[0]["priceRange"] = request.json.get("priceRange", restaurant[0]["priceRange"])
+    
+        return jsonify({"Updated restaurant": restaurant[0]})
 	```
-   - apagar um restaurante pelo seu `id`
+   - Apagar um restaurante pelo seu `id`
 	``` py
     @app.route("/todo/api/restaurants/<int:restaurants_id>", methods=["DELETE"])
     def delete_restaurants(restaurants_id):

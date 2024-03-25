@@ -60,32 +60,46 @@ def not_found(error):
 def create_task():
     if not request.json or not "title" in request.json:
         abort(400)
-    task = {
+    newRestaurant = {
             "id": restaurantsList[-1]["id"] + 1,
-            "title": request.json["title"],
-            "description": request.json.get("description", ""),
-            "done": False
+            "name": request.json["name"],
+            "address": request.json.get("address", ""),
+            "url": request.json.get("url", ""),
+            "menu": request.json.get("menu", ""),
+            "telephone": request.json.get("telephone", ""),
+            "priceRange": request.json.get("priceRange", ""),
         }
-    restaurantsList.append(task)
-    return jsonify({"task": task}), 201
+    restaurantsList.append(newRestaurant)
+    return jsonify({"Created Restaurant": newRestaurant}), 201
 
-@app.route("/todo/api/restaurants/<int:task_id>", methods=["PUT"])
-def update_task(task_id):
-    task = [task for task in restaurantsList if task["id"] == task_id]
-    if len(task) == 0:
+@app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["PUT"])
+def update_task(restaurant_id):
+    restaurant = [restaurant for restaurant in restaurant if restaurant["id"] == restaurant_id]
+    if len(restaurant) == 0:
         abort(404)
     if not request.json:
         abort(400)
-    if "title" in request.json and type(request.json["title"]) != str:
+    if "name" in request.json and type(request.json["name"]) != str:
         abort(400)
-    if "description" in request.json and type(request.json["description"]) is not str:
+    if "address" in request.json and type(request.json["address"]) is not str:
         abort(400)
-    if "done" in request.json and type(request.json["done"]) is not bool:
+    if "url" in request.json and type(request.json["url"]) is not str:
         abort(400)
-    task[0]["title"] = request.json.get("title", task[0]["title"])
-    task[0]["description"] = request.json.get("description", task[0]["description"])
-    task[0]["done"] = request.json.get("done", task[0]["done"])
-    return jsonify({"task": task[0]})
+    if "menu" in request.json and type(request.json["menu"]) is not str:
+        abort(400)
+    if "telephone" in request.json and type(request.json["telephone"]) is not str:
+        abort(400)
+    if "priceRange" in request.json and type(request.json["priceRange"]) is not str:
+        abort(400)
+
+    restaurant[0]["name"] = request.json.get("name", restaurant[0]["name"])
+    restaurant[0]["address"] = request.json.get("address", restaurant[0]["address"])
+    restaurant[0]["url"] = request.json.get("url", restaurant[0]["url"])
+    restaurant[0]["menu"] = request.json.get("menu", restaurant[0]["menu"])
+    restaurant[0]["telephone"] = request.json.get("telephone", restaurant[0]["telephone"])
+    restaurant[0]["priceRange"] = request.json.get("priceRange", restaurant[0]["priceRange"])
+    
+    return jsonify({"Updated restaurant": restaurant[0]})
 
 @app.route("/todo/api/restaurants/<int:restaurants_id>", methods=["DELETE"])
 def delete_restaurants(restaurants_id):
