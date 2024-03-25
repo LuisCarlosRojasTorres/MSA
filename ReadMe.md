@@ -50,7 +50,7 @@ Integrantes:
     def get_restaurants():
         return jsonify({"List of Restaurants": restaurantsList})
 	```
-     - Output no navegador:
+     - Output no navegador:  
     ![Lista de Restaurantes](/images/ListOfRestaurants.png)
 
    - retornar um restaurante pelo `id`:
@@ -62,7 +62,7 @@ Integrantes:
             abort(404)
         return jsonify({"restaurant selected by Id": restaurant[0]})
 	```
-     - Output no navegador:
+     - Output no navegador:  
     ![Restaurant By Index](/images/RestaurantByIndex.png)
 
    - consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade:
