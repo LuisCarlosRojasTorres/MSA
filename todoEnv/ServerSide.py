@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, abort, make_response, request
 
 app = Flask(__name__)
-HOST = "0.0.0.0"
+HOST = "localhost"
 PORT = 4999
 
 restaurantsList = [
