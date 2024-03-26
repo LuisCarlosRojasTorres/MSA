@@ -38,7 +38,8 @@ Integrantes:
 ##  2. <a name='Questesprticas'></a> Questões práticas
 
 1. (TODO) Modele a estrutura dos dados providos pelo serviço, por exemplo, um modelo Entidade-Relacionamento ou um modelo de classes UML.
-
+- Class Diagram
+![UML Diagram](/images/UMLClassDiagram.png)
   
 2. Implemente um serviço Web RESTful com operações para:
    - [x] Inserir um restaurante:
