@@ -3,7 +3,7 @@
 <!-- vscode-markdown-toc -->
 * 1. [ Questões conceituais](#Questesconceituais)
 * 2. [ Questões práticas](#Questesprticas)
-* 2. [ Anexo](#Anexo)
+* 3. [ Anexo](#Anexo)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
