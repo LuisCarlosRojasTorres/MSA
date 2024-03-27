@@ -73,10 +73,28 @@ def index():
 
 @app.route("/todo/api/restaurants", methods=["GET"])
 def get_restaurants():
-    return jsonify({"Lista de Restaurants": restaurantsList})
+    city = request.args.get("addressLocality")
+    if city is None:
+        return jsonify({"Lista de Restaurants": restaurantsList})
+    else:
+        print(" - City: " + city)
+        ans = list()
+        for restaurant in restaurantsList:
+            if restaurant["address"]["addressLocality"] == city:
+                ans.append(restaurant)
+            
+        if len(restaurant) == 0:
+            abort(404)
+        return jsonify({"Restaurant selected by address new way": ans})
+
+        
+
+    #print("get_restaurants()")
+    #return jsonify({"Lista de Restaurants": restaurantsList})
 
 @app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["GET"])
 def get_restaurant_by_index(restaurant_id):
+    print("get_restaurant_by_index")
     restaurant = [restaurant for restaurant in restaurantsList if restaurant["id"] == restaurant_id]
     if len(restaurant) == 0:
         abort(404)
@@ -84,6 +102,7 @@ def get_restaurant_by_index(restaurant_id):
 
 @app.route("/todo/api/restaurants/<restaurant_addr>", methods=["GET"])
 def get_restaurant_by_City(restaurant_addr):
+    print("get_restaurant_by_City")
     ans = list()
     for restaurant in restaurantsList:
         if restaurant["address"]["addressLocality"] == restaurant_addr:
@@ -92,6 +111,19 @@ def get_restaurant_by_City(restaurant_addr):
     if len(restaurant) == 0:
         abort(404)
     return jsonify({"Restaurant selected by addressLocality": ans})
+
+@app.route("/todo/api/restaurants/cities", methods=["GET"])
+def get_AllCities():
+    ans = list()
+    for restaurant in restaurantsList:
+        if restaurant["address"]["addressLocality"] not in ans:
+            print(" - City:" + restaurant["address"]["addressLocality"])
+            ans.append(restaurant["address"]["addressLocality"])
+            
+    if len(ans) == 0:
+        abort(404)
+    ans.sort()
+    return jsonify({"Cities": ans})
 
 @app.errorhandler(404)
 def not_found(error):
