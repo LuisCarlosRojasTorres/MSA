@@ -97,10 +97,14 @@ def get_restaurants():
 @app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["GET"])
 def get_restaurant_by_index(restaurant_id):
     print("get_restaurant_by_index")
-    restaurant = [restaurant for restaurant in restaurantsList if restaurant["id"] == restaurant_id]
-    if len(restaurant) == 0:
+    try:
+        id = int(restaurant_id)
+        restaurant = restaurantsList[id]
+        if len(restaurant) == 0:
+            return not_found()
+        return jsonify(restaurant)
+    except (ValueError, TypeError):
         return not_found()
-    return jsonify({"Restaurant selected by Id": restaurant[0]})
 
 @app.route("/todo/api/restaurants/<restaurant_addr>", methods=["GET"])
 def get_restaurant_by_City(restaurant_addr):
@@ -110,7 +114,7 @@ def get_restaurant_by_City(restaurant_addr):
         if restaurant["address"]["addressLocality"] == restaurant_addr:
             ans.append(restaurant)
             
-    if len(restaurant) == 0:
+    if len(restaurant) == 0 or len(ans) == 0:
         return not_found()
     return jsonify(ans)
 
@@ -129,7 +133,7 @@ def get_AllCities():
 
 @app.errorhandler(404)
 def not_found():
-    return make_response(jsonify({"error": "Restaurant Not found!"}), 404)
+    return make_response(jsonify({"error": "Restaurant não encontrado!"}), 404)
 
 @app.errorhandler(400)
 def bad_request(field):
@@ -178,7 +182,7 @@ def update_restaurant(restaurant_id):
     restaurant[0]["telephone"] = request.json.get("telephone", restaurant[0]["telephone"])
     restaurant[0]["priceRange"] = request.json.get("priceRange", restaurant[0]["priceRange"])
     
-    return jsonify({"Updated restaurant": restaurant[0]})
+    return jsonify(restaurant[0])
 
 @app.route("/todo/api/restaurants/<int:restaurants_id>", methods=["DELETE"])
 def delete_restaurants(restaurants_id):
