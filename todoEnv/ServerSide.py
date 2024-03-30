@@ -2,7 +2,7 @@ from flask import Flask, jsonify, make_response, request
 from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=['http://localhost:8000'], always_send=False)
 HOST = "localhost"
 PORT = 4999
 
@@ -19,8 +19,8 @@ restaurantsList = [
 },
 "url": "www.rest1.com.br",
 "menu": "www.rest1.com.br/menu",
-"telephone": "111-1111",
-"priceRange": "$$11-111"
+"telephone": "11 11111-1111",
+"priceRange": "$$"
 },
 {
 "id": 2,
@@ -34,8 +34,8 @@ restaurantsList = [
 },
 "url": "www.rest2.com.br",
 "menu": "www.rest2.com.br/menu",
-"telephone": "222-2222",
-"priceRange": "$$22-222"
+"telephone": "22 22222-2222",
+"priceRange": "$$$"
 },
 {
 "id": 3,
@@ -49,8 +49,8 @@ restaurantsList = [
 },
 "url": "www.rest3.com.br",
 "menu": "www.rest3.com.br/menu",
-"telephone": "333-3333",
-"priceRange": "$$33-333"
+"telephone": "33 33333-3333",
+"priceRange": "$$$$"
 },
 {
 "id": 4,
@@ -64,8 +64,8 @@ restaurantsList = [
 },
 "url": "www.rest4.com.br",
 "menu": "www.rest4.com.br/menu",
-"telephone": "444-4444",
-"priceRange": "$$44-444"
+"telephone": "44 44444-4444",
+"priceRange": "$"
 },
 ]
 
@@ -99,10 +99,12 @@ def get_restaurant_by_index(restaurant_id):
     print("get_restaurant_by_index")
     try:
         id = int(restaurant_id)
-        restaurant = restaurantsList[id]
-        if len(restaurant) == 0:
-            return not_found()
-        return jsonify(restaurant)
+        for restaurant in restaurantsList:
+            if restaurant["id"] == id:
+                if len(restaurant) == 0:
+                    return not_found()
+                return jsonify(restaurant)
+        return not_found()
     except (ValueError, TypeError):
         return not_found()
 
@@ -155,7 +157,7 @@ def create_restaurant():
     restaurantsList.append(newRestaurant)
     return jsonify(newRestaurant), 201
 
-@app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["PUT"])
+@app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["PUT", "OPTIONS"])
 def update_restaurant(restaurant_id):
     restaurant = [restaurant for restaurant in restaurantsList if restaurant["id"] == restaurant_id]
     if len(restaurant) == 0:
@@ -191,6 +193,13 @@ def delete_restaurants(restaurants_id):
         return not_found()
     restaurantsList.remove(restaurants[0])
     return jsonify({"Result Of Deletion by Id": True})
+
+@app.after_request
+def after_request(response):
+  response.headers.add('Access-Control-Allow-Origin', '*')
+  response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+  response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+  return response
 
 if __name__ == "__main__":
     app.run(host=HOST, port=PORT, debug=True)
