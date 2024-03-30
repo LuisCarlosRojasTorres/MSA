@@ -28,7 +28,7 @@ function getAllRestaurant() {
                     response.text().then(responseData => {
                         restaurantList = JSON.parse(responseData);
                         restaurantList.forEach(element => {
-                            buildRestaurantList(element)
+                            buildRestaurantList(element, "responseField");
                         });
                     }); 
                 } else {
@@ -100,9 +100,13 @@ function getRestaurantByProperty(property) {
                     document.getElementById("responseField").innerText = "";
                     response.text().then(responseData => {
                         restaurants = JSON.parse(responseData);
-                        restaurants.forEach(element => {
-                            buildRestaurantList(element);
-                        });
+                        if (Array.isArray(restaurants)) {
+                            restaurants.forEach(element => {
+                                buildRestaurantList(element, "responseField");
+                            });
+                        } else {
+                            buildRestaurantList(restaurants, "responseField");
+                        }
                     }); 
                 } else {
                     response.json().then(responseData => {
@@ -116,7 +120,7 @@ function getRestaurantByProperty(property) {
     }
 }
 
-function buildRestaurantList(restaurant) {
+function buildRestaurantList(restaurant, responseFieldName) {
     htmlList = document.createElement("ul");
     htmlList.innerHTML = restaurant.name;
     Object.keys(restaurant).forEach(key => {
@@ -126,5 +130,5 @@ function buildRestaurantList(restaurant) {
         item.appendChild(node);
         htmlList.appendChild(item);
     }); 
-    document.getElementById("responseField").append(htmlList);
+    document.getElementById(responseFieldName).append(htmlList);
 }
