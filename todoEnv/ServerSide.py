@@ -71,7 +71,7 @@ restaurantsList = [
 def index():
     return "Trabalho N2! Arquitetura de Microserviços"
 
-@app.route("/todo/api/restaurants", methods=["GET"])
+@app.route("/api/restaurants", methods=["GET"])
 def get_restaurants():
     city = request.args.get("addressLocality")
     if city is None:
@@ -87,12 +87,7 @@ def get_restaurants():
             abort(404)
         return jsonify({"Restaurant selected by address new way": ans})
 
-        
-
-    #print("get_restaurants()")
-    #return jsonify({"Lista de Restaurants": restaurantsList})
-
-@app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["GET"])
+@app.route("/api/restaurants/<int:restaurant_id>", methods=["GET"])
 def get_restaurant_by_index(restaurant_id):
     print("get_restaurant_by_index")
     restaurant = [restaurant for restaurant in restaurantsList if restaurant["id"] == restaurant_id]
@@ -100,7 +95,7 @@ def get_restaurant_by_index(restaurant_id):
         abort(404)
     return jsonify({"Restaurant selected by Id": restaurant[0]})
 
-@app.route("/todo/api/restaurants/<restaurant_addr>", methods=["GET"])
+@app.route("/api/restaurants/<restaurant_addr>", methods=["GET"])
 def get_restaurant_by_City(restaurant_addr):
     print("get_restaurant_by_City")
     ans = list()
@@ -112,7 +107,7 @@ def get_restaurant_by_City(restaurant_addr):
         abort(404)
     return jsonify({"Restaurant selected by addressLocality": ans})
 
-@app.route("/todo/api/restaurants/cities", methods=["GET"])
+@app.route("/api/restaurants/cities", methods=["GET"])
 def get_AllCities():
     ans = list()
     for restaurant in restaurantsList:
@@ -129,7 +124,7 @@ def get_AllCities():
 def not_found(error):
     return make_response(jsonify({"error": "Restaurant Not found!"}), 404)
 
-@app.route("/todo/api/restaurants", methods=["POST"])
+@app.route("/api/restaurants", methods=["POST"])
 def create_restaurant():
     if not request.json or not "name" in request.json:
         abort(400)
@@ -145,7 +140,7 @@ def create_restaurant():
     restaurantsList.append(newRestaurant)
     return jsonify({"Created Restaurant": newRestaurant}), 201
 
-@app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["PUT"])
+@app.route("/api/restaurants/<int:restaurant_id>", methods=["PUT"])
 def update_restaurant(restaurant_id):
     restaurant = [restaurant for restaurant in restaurantsList if restaurant["id"] == restaurant_id]
     if len(restaurant) == 0:
@@ -174,7 +169,7 @@ def update_restaurant(restaurant_id):
     
     return jsonify({"Updated restaurant": restaurant[0]})
 
-@app.route("/todo/api/restaurants/<int:restaurants_id>", methods=["DELETE"])
+@app.route("/api/restaurants/<int:restaurants_id>", methods=["DELETE"])
 def delete_restaurants(restaurants_id):
     restaurants = [restaurants for restaurants in restaurantsList if restaurants["id"] == restaurants_id]
     if len(restaurants) == 0:
