@@ -7,7 +7,12 @@ document.getElementById("getAllRestautantsButton").addEventListener("click", fun
 
 document.getElementById("getRetaurantByCity").addEventListener("click", function () {
     city = document.getElementById("citiesAvailable").value
-    getRestaurantByCity(city);
+    getRestaurantByProperty(city);
+});
+
+document.getElementById("getRetaurantByID").addEventListener("click", function () {
+    id = document.getElementById("idInput").value
+    getRestaurantByProperty(id);
 });
 
 function getAllRestaurant() {
@@ -83,9 +88,9 @@ function buildCityList(city) {
     }
 }
 
-function getRestaurantByCity(city) {
+function getRestaurantByProperty(property) {
     try {
-        fetch(HOST + commonPath + "/" + city, {
+        fetch(HOST + commonPath + "/" + property, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
