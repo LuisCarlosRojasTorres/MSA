@@ -12,6 +12,12 @@ document.getElementById("getRetaurantByCity").addEventListener("click", function
 
 document.getElementById("getRetaurantByID").addEventListener("click", function () {
     id = document.getElementById("idInput").value
+    
+    if (id === "") {
+        alert("ID precisa estar preenchido");
+        return;
+    }
+
     getRestaurantByProperty(id);
 });
 
@@ -121,14 +127,47 @@ function getRestaurantByProperty(property) {
 }
 
 function buildRestaurantList(restaurant, responseFieldName) {
+    card = document.createElement("div");
+    card.className = "card";
+    card.id = "restaurantDataCard";
     htmlList = document.createElement("ul");
     htmlList.innerHTML = restaurant.name;
     Object.keys(restaurant).forEach(key => {
         if (key === "name") { return }
+        if (key === "address") { return }
         item = document.createElement("li");
-        node = document.createTextNode(key + " : " + restaurant[key]);
+        node = document.createTextNode(localizedKeys[key] + ": " + restaurant[key]);
         item.appendChild(node);
         htmlList.appendChild(item);
     }); 
-    document.getElementById(responseFieldName).append(htmlList);
+    card.append(htmlList);
+    document.getElementById(responseFieldName).append(card);
+    buildAddressList(restaurant.address, card);
+}
+
+function buildAddressList(address, cardElement) {
+    addressList = document.createElement("ul");
+    addressList.innerHTML = "Dados de endereço";
+    Object.keys(address).forEach(key => {
+        item = document.createElement("li");
+        node = document.createTextNode(localizedKeys[key] + " : " + address[key]);
+        item.appendChild(node);
+        addressList.appendChild(item);
+    }); 
+    cardElement.append(addressList);
+}
+
+var localizedKeys = {
+    "id": "Identificador",
+    "name": "Nome",
+    "address": "Endereço",
+    "postalCode":"CEP",
+    "streetAddress":"Logradouro",
+    "addressLocality":"Cidade",
+    "addressRegion":"Estado",
+    "addressCountry":"País",
+    "url": "Site",
+    "menu": "Menu",
+    "telephone": "Telefone",
+    "priceRange": "Preço Médio"
 }

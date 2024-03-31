@@ -135,7 +135,7 @@ def get_AllCities():
 
 @app.errorhandler(404)
 def not_found():
-    return make_response(jsonify({"error": "Restaurant não encontrado!"}), 404)
+    return make_response(jsonify({"error": "Restaurante não encontrado!"}), 404)
 
 @app.errorhandler(400)
 def bad_request(field):
@@ -186,13 +186,25 @@ def update_restaurant(restaurant_id):
     
     return jsonify(restaurant[0])
 
-@app.route("/todo/api/restaurants/<int:restaurants_id>", methods=["DELETE"])
-def delete_restaurants(restaurants_id):
-    restaurants = [restaurants for restaurants in restaurantsList if restaurants["id"] == restaurants_id]
-    if len(restaurants) == 0:
+@app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["DELETE"])
+def delete_restaurants(restaurant_id):
+    try:
+        id = int(restaurant_id)
+        for restaurant in restaurantsList:
+            if restaurant["id"] == id:
+                if len(restaurant) == 0:
+                    return not_found()
+                restaurantsList.remove(restaurant)
+                return jsonify({"resultMessage": "Restaurante {}, com o ID: {} foi deletado com sucesso".format(restaurant["name"], restaurant["id"])})
         return not_found()
-    restaurantsList.remove(restaurants[0])
-    return jsonify({"Result Of Deletion by Id": True})
+    except (ValueError, TypeError):
+        return not_found()
+    
+    # restaurants = [restaurants for restaurants in restaurantsList if restaurants["id"] == restaurants_id]
+    # if len(restaurants) == 0:
+    #     return not_found()
+    # restaurantsList.remove(restaurants[0])
+    # return jsonify({"resultMessage": "Restaurante {}, com o ID: {} foi deletado com sucesso".format(restaurants[0].name, )})
 
 @app.after_request
 def after_request(response):

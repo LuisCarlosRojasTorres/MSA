@@ -9,3 +9,21 @@
 .button { 
     margin-top: 10px;
 }
+
+#streetAddressInput {
+    width: 35%;
+}
+
+li {
+    list-style-type: none;
+    font-weight: normal;
+}
+
+ul {
+    font-weight: bold;
+}
+
+#restaurantDataCard {
+    margin-bottom: 10px;
+    padding: 5px;
+}

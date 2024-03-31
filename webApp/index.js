@@ -4,7 +4,11 @@ const commonPath = "/todo/api/restaurants";
 document.getElementById("submitButton").addEventListener("click", function () {
     // Define the data to be sent in the request
     address = {
-        "addressLocality": document.getElementById("addressInput").value
+        "postalCode": document.getElementById("cepInput").value,
+        "streetAddress": document.getElementById("streetAddressInput").value,
+        "addressLocality": document.getElementById("cityInput").value,
+        "addressRegion": document.getElementById("stateInput").value,
+        "addressCountry": document.getElementById("countryInput").value,
     };
 
     data = {
@@ -15,7 +19,13 @@ document.getElementById("submitButton").addEventListener("click", function () {
     "telephone": document.getElementById("telephoneInput").value,
     "priceRange": document.getElementById("priceRangeInput").value
     };
+
     
+    if (Object.values(data).filter( v => v === "" ).length > 0) {
+        alert("Preencha todos os campos");
+        return;
+    }
+
     createRestaurant(data);
 });
 
