@@ -42,35 +42,48 @@ Integrantes:
 ![UML Diagram](/images/UMLClassDiagram.png)
   
 2. Implemente um serviço Web RESTful com operações para:
-   - [x] Inserir um restaurante:
-    ``` py
-    @app.route("/todo/api/restaurants", methods=["POST"])
-    def create_task():
-        if not request.json or not "title" in request.json:
-            abort(400)
-        newRestaurant = {
-            "id": restaurantsList[-1]["id"] + 1,
-            "name": request.json["name"],
-            "address": request.json.get("address", ""),
-            "url": request.json.get("url", ""),
-            "menu": request.json.get("menu", ""),
-            "telephone": request.json.get("telephone", ""),
-            "priceRange": request.json.get("priceRange", ""),
-        }
-        restaurantsList.append(newRestaurant)
-        return jsonify({"Created Restaurant": newRestaurant}), 201
-	```
-     - Post in Postman:  
-     ![Post in Postman](/images/PostRestaurant2.png)
-     - Output no navegador:  
-     ![Output](/images/PostRestaurant.png)
+   - Inserir um restaurante
+   - Retornar todos os restaurantes:
+   - Retornar um restaurante pelo `id`
+   - Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade
+   - Atualizar restaurante, por exemplo, atualizar o endereço do restaurante
+   - Apagar um restaurante pelo seu `id`
 
-   - [x] Retornar todos os restaurantes:
-	``` py
-	@app.route("/todo/api/restaurants", methods=["GET"])
-    def get_restaurants():
-        return jsonify({"List of Restaurants": restaurantsList})
-	```
+### Solução
+- Para apresentar a solução deste trabalho se utilizara a seguinte data:
+
+![](/images/Restaurants.png)
+
+#### Inserir um restaurante
+
+``` py
+@app.route("/todo/api/restaurants", methods=["POST"])
+def create_task():
+    if not request.json or not "title" in request.json:
+        abort(400)
+    newRestaurant = {
+        "id": restaurantsList[-1]["id"] + 1,
+        "name": request.json["name"],
+        "address": request.json.get("address", ""),
+        "url": request.json.get("url", ""),
+        "menu": request.json.get("menu", ""),
+        "telephone": request.json.get("telephone", ""),
+        "priceRange": request.json.get("priceRange", ""),
+    }
+    restaurantsList.append(newRestaurant)
+    return jsonify({"Created Restaurant": newRestaurant}), 201
+```
+- Post in Postman:  
+![Post in Postman](/images/PostRestaurant2.png)
+- Output no navegador:  
+![Output](/images/PostRestaurant.png)
+
+#### Retornar todos os restaurantes:
+``` py
+@app.route("/todo/api/restaurants", methods=["GET"])
+def get_restaurants():
+return jsonify({"List of Restaurants": restaurantsList})
+```
      - Output no navegador:  
      ![Lista de Restaurantes](/images/ListOfRestaurants.png)
 
@@ -303,31 +316,16 @@ restaurantsList = [
 "name": "Restaurant3",
 "address": {
     "postalCode":"111",
-    "streetAddress":"Rua Tres número 3333",
+    "streetAddress":"Rua Um número 3333",
     "addressLocality":"Cidade1",
-    "addressRegion":"Region1",
-    "addressCountry":"Country1",
+    "addressRegion":"Region3",
+    "addressCountry":"Country3",
 },
 "url": "www.rest3.com.br",
 "menu": "www.rest3.com.br/menu",
 "telephone": "333-3333",
 "priceRange": "$$33-333"
-},
-{
-"id": 4,
-"name": "Restaurant4",
-"address": {
-    "postalCode":"444",
-    "streetAddress":"Rua Quatro número 4444",
-    "addressLocality":"Cidade4",
-    "addressRegion":"Region4",
-    "addressCountry":"Country4",
-},
-"url": "www.rest4.com.br",
-"menu": "www.rest4.com.br/menu",
-"telephone": "444-4444",
-"priceRange": "$$44-444"
-},
+}
 ]
 
 @app.route('/')

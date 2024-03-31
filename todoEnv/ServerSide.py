@@ -40,31 +40,16 @@ restaurantsList = [
 "name": "Restaurant3",
 "address": {
     "postalCode":"111",
-    "streetAddress":"Rua Tres número 3333",
+    "streetAddress":"Rua Um número 3333",
     "addressLocality":"Cidade1",
-    "addressRegion":"Region1",
-    "addressCountry":"Country1",
+    "addressRegion":"Region3",
+    "addressCountry":"Country3",
 },
 "url": "www.rest3.com.br",
 "menu": "www.rest3.com.br/menu",
 "telephone": "333-3333",
 "priceRange": "$$33-333"
-},
-{
-"id": 4,
-"name": "Restaurant4",
-"address": {
-    "postalCode":"444",
-    "streetAddress":"Rua Quatro número 4444",
-    "addressLocality":"Cidade4",
-    "addressRegion":"Region4",
-    "addressCountry":"Country4",
-},
-"url": "www.rest4.com.br",
-"menu": "www.rest4.com.br/menu",
-"telephone": "444-4444",
-"priceRange": "$$44-444"
-},
+}
 ]
 
 @app.route('/')
