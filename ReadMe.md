@@ -19,50 +19,51 @@ Integrantes:
 - Luis Carlos Rojas Torres
 
 ##  1. <a name='Questesconceituais'></a> Questões conceituais
-1. Defina serviço RESTful.
+
+**1. Defina serviço RESTful. **
 	Um serviço RESTful (Representational State Transfer) é uma abordagem de design de arquitetura de software para sistemas distribuídos na web. Essa arquitetura foi criada pelo cientista da computação norte-americano Roy Fielding. REST não é um protocolo ou padrão, mas sim um conjunto de restrições de arquitetura. 
-Quando um cliente faz uma solicitação usando uma API RESTful, essa API transfere uma representação do estado do recurso ao solicitante ou endpoint. Essa informação (ou representação) é entregue via HTTP utilizando um dos vários formatos possíveis: Javascript Object Notation (JSON), HTML, XLT, Python, PHP ou texto sem formatação.
-Para uma API ser considerada do tipo RESTful, ela precisa está em conformidade com os seguintes critérios:
+	Quando um cliente faz uma solicitação usando uma API RESTful, essa API transfere uma representação do estado do recurso ao solicitante ou endpoint. Essa informação (ou representação) é entregue via HTTP utilizando um dos vários formatos possíveis: Javascript Object Notation (JSON), HTML, XLT, Python, PHP ou texto sem formatação.
+	Para uma API ser considerada do tipo RESTful, ela precisa está em conformidade com os seguintes critérios:
 
-	1.	Ter uma arquitetura cliente/servidor formada por clientes, servidores e recursos, com solicitações gerenciadas por HTTP.
-	2.	Estabelecer uma comunicação stateless entre cliente e servidor. 
+1.	Ter uma arquitetura cliente/servidor formada por clientes, servidores e recursos, com solicitações gerenciadas por HTTP.
+2.	Estabelecer uma comunicação stateless entre cliente e servidor. 
+
+3.	Armazenar dados em cache para otimizar as interações entre cliente e servidor.
 	
-	3.	Armazenar dados em cache para otimizar as interações entre cliente e servidor.
+4.	Ter uma interface uniforme entre os componentes para as informações serem transferidas em um formato padronizado.
 	
-	4.	Ter uma interface uniforme entre os componentes para as informações serem transferidas em um formato padronizado.
+5.	Ter um sistema em camadas que organiza os tipos de servidores envolvidos na recuperação das informações solicitadas em hierarquias que o cliente não pode ver.
 	
-	5.	Ter um sistema em camadas que organiza os tipos de servidores envolvidos na recuperação das informações solicitadas em hierarquias que o cliente não pode ver.
+6.	Possibilitar código sob demanda (opcional): a capacidade de enviar um código executável do servidor para o cliente quando solicitado para ampliar a funcionalidade disponível ao cliente.
 	
-	6.	Possibilitar código sob demanda (opcional): a capacidade de enviar um código executável do servidor para o cliente quando solicitado para ampliar a funcionalidade disponível ao cliente.
-	
- Desse modo, um serviço RESTful é um sistema distribuído baseado em recursos que adota os princípios do REST para fornecer uma interface simples e eficiente para interações entre cliente e servidor na web.
+	 Desse modo, um serviço RESTful é um sistema distribuído baseado em recursos que adota os princípios do REST para fornecer uma interface simples e eficiente para interações entre cliente e servidor na web.
 
 
-2. Liste e explique os quatro principais princípios de serviços RESTful
-	- Usar os métodos HTTP explicitamente
+**2. Liste e explique os quatro principais princípios de serviços RESTful**
+- Usar os métodos HTTP explicitamente
 		GET: Usado para recuperar informações de um recurso.
 		POST: Utilizado para criar um novo recurso.
 		PUT: Utilizado para atualizar um recurso existente.
 		DELETE: Utilizado para remover um recurso.
 	Além desses, há outros métodos HTTP, como OPTIONS, HEAD, PATCH, que também podem ser aplicados, mas esses quatro são os mais comuns em serviços RESTful
 
-	- Ser sem estado (stateless)
-		Estabelecer uma comunicação stateless entre cliente e servidor significa que nenhuma informação do cliente é armazenada entre solicitações GET e toda as solicitações são separadas e desconectadas. Esse princípio implica que cada solicitação ao servidor deve conter todas as informações necessárias para que o servidor entenda e processe a solicitação, sem depender de nenhum estado mantido pelo servidor entre solicitações.
+- Ser sem estado (stateless)
+		Estabelecer uma comunicação stateless entre cliente e servidor significa que nenhuma informação do cliente é armazenada entre solicitações GET e toda as solicitações são separadas e desconectadas. Esse princípio implica que cada solicitação ao servidor deve conter todas as informações necessárias para que o servidor 			entenda e processe a solicitação, sem depender de nenhum estado mantido pelo servidor entre solicitações.
 
-	- Expor URIs como estrutura de diretórios
+- Expor URIs como estrutura de diretórios
 		Os recursos de um serviço RESTful devem ser identificados por URIs (Uniform Resource Identifiers) e que a estrutura dessas URIs deve seguir uma hierarquia semelhante a uma estrutura de diretórios. Por exemplo, em um serviço RESTful para um sistema de blog, a estrutura de URIs pode ser algo como: /blog/posts/comentarios.
 	
  - Transferir XML, JSON (JavaScript Object Notation) ou ambos
-		Este princípio significa que os dados transferidos entre servidor e cliente devem ser representados em formatos interoperáveis, como XML (eXtensible Markup Language) ou JSON (JavaScript Object Notation). Esses formatos são utilizados na web e são fáceis de serializar e desserializar em várias linguagens de programação. O uso de ambos os formatos é opcional, entretanto, JSON é preferido devido à sua leveza e simplicidade.
+		Este princípio significa que os dados transferidos entre servidor e cliente devem ser representados em formatos interoperáveis, como XML (eXtensible Markup Language) ou JSON (JavaScript Object Notation). Esses formatos são utilizados na web e são fáceis de serializar e desserializar em várias linguagens de programação. O 		uso de ambos os formatos é opcional, entretanto, JSON é preferido devido à sua leveza e simplicidade.
 
-3. Apresente as diferenças entre serviços Web SOAP (ou serviço Web WS) e serviços Web RESTful
+**3. Apresente as diferenças entre serviços Web SOAP (ou serviço Web WS) e serviços Web RESTful**
 	REST e SOAP são duas maneiras diferentes para a transmissão de dados online. Em resumo, eles definem como as APIs são criadas, possibilitando a comunicação dos dados entre aplicações web.
 REST (Representational State Transfer) é um conjunto de princípios de arquitetura. Enquanto SOAP (Simple Object Access Protocol) é um protocolo oficial mantido pela World Wide Web Consortium (W3C). A principal diferença é que SOAP é um protocolo e REST, não. SOAP é baseado em um estilo de arquitetura mais rígido, centrado em operações (métodos) e contratos (WSDL). Geralmente segue uma abordagem orientada a serviços. REST adota recursos (identificados por URIs) e operações HTTP (métodos) para manipular esses recursos. Mais orientado a recursos e estado.
 Outra diferença entre ambos é o formato da mensagem, enquanto SOAP, as mensagens são estruturadas e definidas por um esquema XML, geralmente incluindo cabeçalhos, corpo da mensagem e possivelmente partes anexadas. Já no serviço RESTful pode usar uma variedade de formatos de mensagem, como JSON, XML, HTML, etc. Geralmente, o formato é mais flexível e pode ser escolhido com base na preferência ou necessidade do cliente. 
 Quando o assunto é sobre ESTADO, também temos algumas diferenças. Em SOAP, pode-se manter o estado da sessão do cliente entre as chamadas de serviço usando mecanismos como SOAP sessions. Porém na arquitetura RESTful, Segue o princípio de ser sem estado.
 Em resumo, os serviços web SOAP oferecem segurança integrada e transações em conformidade que atendem a muitas necessidades empresariais, mas que também os deixam mais pesados, os serviços web RESTful é mais flexível, mais leves, e ideais para contextos mais modernos, como a Internet das Coisas (IoT), desenvolvimento de aplicações mobile e serverless.
 
-4. Na opinião do grupo, qual tipo de serviço é mais fácil e rápido de implementar? Justifique.
+**4. Na opinião do grupo, qual tipo de serviço é mais fácil e rápido de implementar? Justifique.**
 	Na opinião do grupo, os serviços Web RESTful apresenta uma implementação mais eficiente devido sua facilidade e rapidez de implementação, além de uma boa flexibilidade para ser escalável. Também destacamos que os serviços Restful apresenta uma boa interpretação e entendimento das operações realizadas por essa arquitetura, pois pode-se usar formatos de dados mais leves, como JSON e métodos HTTP que simplifica a implementação e a compreensão.
 
 ##  2. <a name='Questesprticas'></a> Questões práticas
