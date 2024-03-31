@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Restaurants Admin</title>
+    
+    <link rel="stylesheet" href="/style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="getRestaurant.js" defer></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  </head>
+  <body>  
+    <div class="container">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Criar Restaurante</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="GetRestaurants/getRestaurant.html">Consultar Restaurante</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../UpdateRestaurant/updateRestaurant.html">Gerenciar Restaurante</a>
+              </li>
+            </ul>
+          </nav>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Consultar Restaurante</h5>
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-header">Opções de busca</div>
+                        <div class="card-body text-center">
+                            <div class="card">
+                                <div class="card-body text-left">
+                                <p class="card-text">Buscar todos os restaurantes</p>
+                                <button type="button" class="btn btn-primary" id="getAllRestautantsButton">Buscar</button>
+                              </div>
+                            </div>
+                            <div class="card">
+                              <div class="card-body text-left">
+                              <p class="card-text">Escolha a cidade para filtrar os restaurantes: </p>
+                              <select class="form-control" id="citiesAvailable" onclick="getAllCities()">
+                                <option selected disabled>Selecione a cidade</option>
+                              </select>
+                              <button type="button" class="btn btn-primary" id="getRetaurantByCity">Buscar</button>
+                              </div>
+                            </div>
+                            <div class="card">
+                              <div class="card-body text-left">
+                              <p class="card-text">Digite um ID para buscar o restaurante: </p>
+                              <input type="text" class="form-control" id="idInput" placeholder="Insira o ID">
+                              <button type="button" class="btn btn-primary" id="getRetaurantByID">Buscar</button>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="card bg-light text-dark">
+                        <div class="card-header">Resultado</div>
+                      <div class="card-body text-left">
+                        <p class="card-text" id="responseField"></p>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+  </body>
+  </html>
