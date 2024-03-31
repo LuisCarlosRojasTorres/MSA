@@ -73,7 +73,7 @@ restaurantsList = [
 def index():
     return "Trabalho N2! Arquitetura de Microserviços"
 
-@app.route("/todo/api/restaurants", methods=["GET"])
+@app.route("/api/restaurants", methods=["GET"])
 def get_restaurants():
     city = request.args.get("addressLocality")
     if city is None:
@@ -89,12 +89,7 @@ def get_restaurants():
             return not_found()
         return jsonify({"Restaurant selected by address new way": ans})
 
-        
-
-    #print("get_restaurants()")
-    #return jsonify({"Lista de Restaurants": restaurantsList})
-
-@app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["GET"])
+@app.route("/api/restaurants/<int:restaurant_id>", methods=["GET"])
 def get_restaurant_by_index(restaurant_id):
     print("get_restaurant_by_index")
     try:
@@ -108,7 +103,7 @@ def get_restaurant_by_index(restaurant_id):
     except (ValueError, TypeError):
         return not_found()
 
-@app.route("/todo/api/restaurants/<restaurant_addr>", methods=["GET"])
+@app.route("/api/restaurants/<restaurant_addr>", methods=["GET"])
 def get_restaurant_by_City(restaurant_addr):
     print("get_restaurant_by_City")
     ans = list()
@@ -120,7 +115,7 @@ def get_restaurant_by_City(restaurant_addr):
         return not_found()
     return jsonify(ans)
 
-@app.route("/todo/api/restaurants/cities", methods=["GET"])
+@app.route("/api/restaurants/cities", methods=["GET"])
 def get_AllCities():
     ans = list()
     for restaurant in restaurantsList:
@@ -141,7 +136,7 @@ def not_found():
 def bad_request(field):
     return make_response(jsonify({"error": "O {} é mandatório!".format(field)}), 400)
 
-@app.route("/todo/api/restaurants", methods=["POST"])
+@app.route("/api/restaurants", methods=["POST"])
 def create_restaurant():
     if not request.json or not "name" in request.json or not request.json["name"]:
         return bad_request("Nome")
@@ -157,7 +152,7 @@ def create_restaurant():
     restaurantsList.append(newRestaurant)
     return jsonify(newRestaurant), 201
 
-@app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["PUT", "OPTIONS"])
+@app.route("/api/restaurants/<int:restaurant_id>", methods=["PUT", "OPTIONS"])
 def update_restaurant(restaurant_id):
     restaurant = [restaurant for restaurant in restaurantsList if restaurant["id"] == restaurant_id]
     if len(restaurant) == 0:
@@ -206,6 +201,14 @@ def delete_restaurants(restaurant_id):
     # restaurantsList.remove(restaurants[0])
     # return jsonify({"resultMessage": "Restaurante {}, com o ID: {} foi deletado com sucesso".format(restaurants[0].name, )})
 
+@app.route("/api/restaurants/<int:restaurants_id>", methods=["DELETE"])
+def delete_restaurants(restaurants_id):
+    restaurants = [restaurants for restaurants in restaurantsList if restaurants["id"] == restaurants_id]
+    if len(restaurants) == 0:
+        abort(404)
+    restaurantsList.remove(restaurants[0])
+    return jsonify({"Result Of Deletion by Id": True})
+  
 @app.after_request
 def after_request(response):
   response.headers.add('Access-Control-Allow-Origin', '*')
