@@ -1,5 +1,5 @@
 const HOST = "http://127.0.0.1:5000";
-const commonPath = "/todo/api/restaurants";
+const commonPath = "/api/restaurants";
 
 document.getElementById("submitButton").addEventListener("click", function () {
     // Define the data to be sent in the request
