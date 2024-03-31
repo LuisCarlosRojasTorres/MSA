@@ -289,7 +289,11 @@ def HandleDatabase(id):
     }
     print("------------------------------------")
     put_restaurants(put_dummy_json,5)  
-    ``` 
+    ```
+
+   ### FrontEnd Videos
+   - Criar e buscar restaurantes: https://github.com/LuisCarlosRojasTorres/MSA/blob/frontwebClient/Videos/CriarBuscarRestaurante.mov
+   - Gerenciar Restaurante: https://github.com/LuisCarlosRojasTorres/MSA/blob/frontwebClient/Videos/GerenciarRestaurante.mov
 ##  3. <a name='Anexo'></a> Anexo
 
 - Codigo completo do Server-side:

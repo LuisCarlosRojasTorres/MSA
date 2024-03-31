@@ -1,6 +1,8 @@
-from flask import Flask, jsonify, abort, make_response, request
+from flask import Flask, jsonify, make_response, request
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+CORS(app, origins=['http://localhost:8000'], always_send=False)
 HOST = "localhost"
 PORT = 4999
 
@@ -17,8 +19,8 @@ restaurantsList = [
 },
 "url": "www.rest1.com.br",
 "menu": "www.rest1.com.br/menu",
-"telephone": "111-1111",
-"priceRange": "$$11-111"
+"telephone": "11 11111-1111",
+"priceRange": "$$"
 },
 {
 "id": 2,
@@ -32,8 +34,8 @@ restaurantsList = [
 },
 "url": "www.rest2.com.br",
 "menu": "www.rest2.com.br/menu",
-"telephone": "222-2222",
-"priceRange": "$$22-222"
+"telephone": "22 22222-2222",
+"priceRange": "$$$"
 },
 {
 "id": 3,
@@ -47,8 +49,8 @@ restaurantsList = [
 },
 "url": "www.rest3.com.br",
 "menu": "www.rest3.com.br/menu",
-"telephone": "333-3333",
-"priceRange": "$$33-333"
+"telephone": "33 33333-3333",
+"priceRange": "$$$$"
 },
 {
 "id": 4,
@@ -62,8 +64,8 @@ restaurantsList = [
 },
 "url": "www.rest4.com.br",
 "menu": "www.rest4.com.br/menu",
-"telephone": "444-4444",
-"priceRange": "$$44-444"
+"telephone": "44 44444-4444",
+"priceRange": "$"
 },
 ]
 
@@ -75,7 +77,7 @@ def index():
 def get_restaurants():
     city = request.args.get("addressLocality")
     if city is None:
-        return jsonify({"Lista de Restaurants": restaurantsList})
+        return jsonify(restaurantsList)
     else:
         print(" - City: " + city)
         ans = list()
@@ -84,16 +86,22 @@ def get_restaurants():
                 ans.append(restaurant)
             
         if len(restaurant) == 0:
-            abort(404)
+            return not_found()
         return jsonify({"Restaurant selected by address new way": ans})
 
 @app.route("/api/restaurants/<int:restaurant_id>", methods=["GET"])
 def get_restaurant_by_index(restaurant_id):
     print("get_restaurant_by_index")
-    restaurant = [restaurant for restaurant in restaurantsList if restaurant["id"] == restaurant_id]
-    if len(restaurant) == 0:
-        abort(404)
-    return jsonify({"Restaurant selected by Id": restaurant[0]})
+    try:
+        id = int(restaurant_id)
+        for restaurant in restaurantsList:
+            if restaurant["id"] == id:
+                if len(restaurant) == 0:
+                    return not_found()
+                return jsonify(restaurant)
+        return not_found()
+    except (ValueError, TypeError):
+        return not_found()
 
 @app.route("/api/restaurants/<restaurant_addr>", methods=["GET"])
 def get_restaurant_by_City(restaurant_addr):
@@ -103,9 +111,9 @@ def get_restaurant_by_City(restaurant_addr):
         if restaurant["address"]["addressLocality"] == restaurant_addr:
             ans.append(restaurant)
             
-    if len(restaurant) == 0:
-        abort(404)
-    return jsonify({"Restaurant selected by addressLocality": ans})
+    if len(restaurant) == 0 or len(ans) == 0:
+        return not_found()
+    return jsonify(ans)
 
 @app.route("/api/restaurants/cities", methods=["GET"])
 def get_AllCities():
@@ -116,18 +124,22 @@ def get_AllCities():
             ans.append(restaurant["address"]["addressLocality"])
             
     if len(ans) == 0:
-        abort(404)
+        return not_found()
     ans.sort()
-    return jsonify({"Cities": ans})
+    return jsonify({"cities": ans})
 
 @app.errorhandler(404)
-def not_found(error):
-    return make_response(jsonify({"error": "Restaurant Not found!"}), 404)
+def not_found():
+    return make_response(jsonify({"error": "Restaurante não encontrado!"}), 404)
+
+@app.errorhandler(400)
+def bad_request(field):
+    return make_response(jsonify({"error": "O {} é mandatório!".format(field)}), 400)
 
 @app.route("/api/restaurants", methods=["POST"])
 def create_restaurant():
-    if not request.json or not "name" in request.json:
-        abort(400)
+    if not request.json or not "name" in request.json or not request.json["name"]:
+        return bad_request("Nome")
     newRestaurant = {
             "id": restaurantsList[-1]["id"] + 1,
             "name": request.json["name"],
@@ -138,27 +150,27 @@ def create_restaurant():
             "priceRange": request.json.get("priceRange", ""),
         }
     restaurantsList.append(newRestaurant)
-    return jsonify({"Created Restaurant": newRestaurant}), 201
+    return jsonify(newRestaurant), 201
 
-@app.route("/api/restaurants/<int:restaurant_id>", methods=["PUT"])
+@app.route("/api/restaurants/<int:restaurant_id>", methods=["PUT", "OPTIONS"])
 def update_restaurant(restaurant_id):
     restaurant = [restaurant for restaurant in restaurantsList if restaurant["id"] == restaurant_id]
     if len(restaurant) == 0:
-        abort(404)
+        return not_found()
     if not request.json or not "name" in request.json:
-        abort(400)
+        return bad_request("Name")
     if "name" in request.json and type(request.json["name"]) != str:
-        abort(400)
+        return bad_request("Name")
     if "address" in request.json and type(request.json["address"]) != dict:
-        abort(400)
+        return bad_request("Address")
     if "url" in request.json and type(request.json["url"]) is not str:
-        abort(400)
+        return bad_request("URL")
     if "menu" in request.json and type(request.json["menu"]) is not str:
-        abort(400)
+        return bad_request("Menu")
     if "telephone" in request.json and type(request.json["telephone"]) is not str:
-        abort(400)
+        return bad_request("Telephone")
     if "priceRange" in request.json and type(request.json["priceRange"]) is not str:
-        abort(400)
+        return bad_request("Price Range")
 
     restaurant[0]["name"] = request.json.get("name", restaurant[0]["name"])
     restaurant[0]["address"] = request.json.get("address", restaurant[0]["address"])
@@ -167,15 +179,30 @@ def update_restaurant(restaurant_id):
     restaurant[0]["telephone"] = request.json.get("telephone", restaurant[0]["telephone"])
     restaurant[0]["priceRange"] = request.json.get("priceRange", restaurant[0]["priceRange"])
     
-    return jsonify({"Updated restaurant": restaurant[0]})
+    return jsonify(restaurant[0])
 
-@app.route("/api/restaurants/<int:restaurants_id>", methods=["DELETE"])
-def delete_restaurants(restaurants_id):
-    restaurants = [restaurants for restaurants in restaurantsList if restaurants["id"] == restaurants_id]
-    if len(restaurants) == 0:
-        abort(404)
-    restaurantsList.remove(restaurants[0])
-    return jsonify({"Result Of Deletion by Id": True})
+@app.route("/api/restaurants/<int:restaurant_id>", methods=["DELETE"])
+def delete_restaurants(restaurant_id):
+    try:
+        id = int(restaurant_id)
+        for restaurant in restaurantsList:
+            if restaurant["id"] == id:
+                if len(restaurant) == 0:
+                    return not_found()
+                restaurantsList.remove(restaurant)
+                return jsonify({"resultMessage": "Restaurante {}, com o ID: {} foi deletado com sucesso".format(restaurant["name"], restaurant["id"])})
+        return not_found()
+    except (ValueError, TypeError):
+        return not_found()
+  
+@app.after_request
+def after_request(response):
+  response.headers.add('Access-Control-Allow-Origin', '*')
+  response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+  response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+  return response
 
 if __name__ == "__main__":
     app.run(host=HOST, port=PORT, debug=True)
+    app.register_error_handler(400, bad_request)
+    app.register_error_handler(404, not_found)
