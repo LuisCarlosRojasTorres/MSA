@@ -181,7 +181,7 @@ def update_restaurant(restaurant_id):
     
     return jsonify(restaurant[0])
 
-@app.route("/todo/api/restaurants/<int:restaurant_id>", methods=["DELETE"])
+@app.route("/api/restaurants/<int:restaurant_id>", methods=["DELETE"])
 def delete_restaurants(restaurant_id):
     try:
         id = int(restaurant_id)
@@ -194,20 +194,6 @@ def delete_restaurants(restaurant_id):
         return not_found()
     except (ValueError, TypeError):
         return not_found()
-    
-    # restaurants = [restaurants for restaurants in restaurantsList if restaurants["id"] == restaurants_id]
-    # if len(restaurants) == 0:
-    #     return not_found()
-    # restaurantsList.remove(restaurants[0])
-    # return jsonify({"resultMessage": "Restaurante {}, com o ID: {} foi deletado com sucesso".format(restaurants[0].name, )})
-
-@app.route("/api/restaurants/<int:restaurants_id>", methods=["DELETE"])
-def delete_restaurants(restaurants_id):
-    restaurants = [restaurants for restaurants in restaurantsList if restaurants["id"] == restaurants_id]
-    if len(restaurants) == 0:
-        abort(404)
-    restaurantsList.remove(restaurants[0])
-    return jsonify({"Result Of Deletion by Id": True})
   
 @app.after_request
 def after_request(response):
