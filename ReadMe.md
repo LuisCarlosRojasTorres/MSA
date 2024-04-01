@@ -18,6 +18,8 @@ Integrantes:
 - Wesley Santos da Silva
 - Luis Carlos Rojas Torres
 
+NOTA: O repositorio deste trabalho se encontra em `https://github.com/LuisCarlosRojasTorres/MSA/blob/main/ReadMe.md` [LINK](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/ReadMe.md)
+
 ##  1. <a name='Questesconceituais'></a> Questões conceituais
 
 **1. Defina serviço RESTful.**
@@ -139,7 +141,7 @@ restaurantsList = [
 ]
 ```
 #### Inserir um restaurante
-
+- Para inserir um restaurante utilizaremos o comando `POST`, a seguir se apresenta a implementação em PYTHON do lado do server.
 ``` py
 @app.route("/api/restaurants", methods=["POST"])
 def create_task():
@@ -157,12 +159,13 @@ def create_task():
     restaurantsList.append(newRestaurant)
     return jsonify(newRestaurant), 201
 ```
-- Post in Postman:  
+- Utilizando o Post do Postman:  
 ![Post in Postman](/images/PostRestaurant2.png)
-- Output no navegador:  
+- Output no navegador seria o seguinte:  
 ![Output](/images/PostRestaurant.png)
 
 #### Retornar todos os restaurantes:
+- Para retornar todos os restaurantes utilizaremos um GET para retornar a lista de restaurantes.
 ``` py
 @app.route("/api/restaurants", methods=["GET"])
 def get_restaurants():
@@ -172,6 +175,7 @@ def get_restaurants():
 ![Lista de Restaurantes](/images/ListOfRestaurants.png)
 
 #### Retornar um restaurante pelo `id`:
+- Para retornar um restaurante dado um `id` se adiciona o `/<int:restaurant_id>` no route. A implementação e apresentada:
 ``` py
 @app.route("/api/restaurants/<int:restaurant_id>", methods=["GET"])
 def get_restaurant_by_index(restaurant_id):
@@ -187,10 +191,12 @@ def get_restaurant_by_index(restaurant_id):
     except (ValueError, TypeError):
         return not_found()
 ```
-- Output no navegador:  
+- O resquest é mostrado junto com o output no navegador:  
 ![Restaurant By Index](/images/RestaurantByIndex.png)
 
 #### Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade:
+- Para retornar todos os restaurantes que corresponden a uma cidade se utiliza um `GET` aprimorado. Neste caso os argumentos são obtidos utilizando o `request.args.get("addressLocality")`. A implementação é apresentada a seguir.
+
 ``` py
 @app.route("/api/restaurants", methods=["GET"])
 def get_restaurants():
@@ -208,10 +214,11 @@ def get_restaurants():
             return not_found()
         return jsonify({"Restaurant selected by address new way": ans})
 ```
-- Output no navegador:  
+- O resquest é mostrado junto com o output no navegador:  
 ![Restaurant By City](/images/GetByCity.png)      
 
 #### Atualizar restaurante, por exemplo, atualizar o endereço do restaurante:
+- Para atualizar um restaurante de um `id` específico se utiliza o comando `PUT`.
 ``` py
 @app.route("/api/restaurants/<int:restaurant_id>", methods=["PUT", "OPTIONS"])
 def update_restaurant(restaurant_id):
@@ -242,14 +249,15 @@ def update_restaurant(restaurant_id):
     
     return jsonify(restaurant[0])
 ```
-- Lista de Restaurantes antes del PUT:  
+- Se apresenta a lista de Restaurantes antes del PUT:  
 ![Lista de Restaurantes](/images/PUT01.png)
-- PUT em Postman:  
+- O PUT no Postman junto com a data a atualizar é apresentada na seguinte imagem:  
 ![PUT in Postman](/images/PUT02.png)
-- Lista de Restaurantes después del PUT:  
+- O resultado do PUT é apresentado junto com a lista de restaurantes:  
 ![Lista de Restaurantes](/images/PUT03.png)
 
 #### Apagar um restaurante pelo seu `id`
+- Para apagar um restaurante dado um `id` se utiliza o comando `DELETE`
 ``` py
 @app.route("/api/restaurants/<int:restaurants_id>", methods=["DELETE"])
 def delete_restaurants(restaurants_id):
@@ -259,11 +267,11 @@ def delete_restaurants(restaurants_id):
     restaurantsList.remove(restaurants[0])
     return jsonify({"Result Of Deletion by Id": True})
 ```
-- Post in Postman: 
+- O request no Postman é apresentado a seguir: 
 ![Deleted in Postman](/images/Delete1.png)
-- Output in Postman:  
+- Ao ser deletado com sucesso, o postman apresentará a seguiutne mensagem:  
 ![Output](/images/Delete2.png)
-- Output no navegador:  
+- O Output no navegador amostra que nao existe mais o `Restaurante2` com `id=2`:  
 ![Output](/images/Delete3.png)
     
 3. Opcional Utilize um banco de dados para armazenar os dados.
