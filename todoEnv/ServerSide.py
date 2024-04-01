@@ -51,22 +51,7 @@ restaurantsList = [
 "menu": "www.rest3.com.br/menu",
 "telephone": "33 33333-3333",
 "priceRange": "$$$$"
-},
-{
-"id": 4,
-"name": "Restaurant4",
-"address": {
-    "postalCode":"444",
-    "streetAddress":"Rua Quatro número 4444",
-    "addressLocality":"Cidade4",
-    "addressRegion":"Region4",
-    "addressCountry":"Country4",
-},
-"url": "www.rest4.com.br",
-"menu": "www.rest4.com.br/menu",
-"telephone": "44 44444-4444",
-"priceRange": "$"
-},
+}
 ]
 
 @app.route('/')
