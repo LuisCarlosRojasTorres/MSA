@@ -73,7 +73,7 @@ Para uma API ser considerada do tipo RESTful, ela precisa está em conformidade 
 
 ##  2. <a name='Questesprticas'></a> Questões práticas
 
-1. (TODO) Modele a estrutura dos dados providos pelo serviço, por exemplo, um modelo Entidade-Relacionamento ou um modelo de classes UML.
+1. Modele a estrutura dos dados providos pelo serviço, por exemplo, um modelo Entidade-Relacionamento ou um modelo de classes UML.
 - Class Diagram
 ![UML Diagram](/images/UMLClassDiagram.png)
   
