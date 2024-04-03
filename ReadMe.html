@@ -1,0 +1,654 @@
+<!DOCTYPE html><html><head>
+      <title>ReadMe</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\redto\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.13\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="arquitetura-de-serviços---trabalho-2">Arquitetura de Serviços - Trabalho 2 </h1>
+<ul>
+<li>
+<ol>
+<li><a href="#Questesconceituais"> Questões conceituais</a></li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li><a href="#Questesprticas"> Questões práticas</a></li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li><a href="#Anexo"> Anexo</a></li>
+</ol>
+</li>
+</ul>
+<p>Professor: Leonardo Guerreiro Azevedo<br>
+Integrantes:</p>
+<ul>
+<li>Breno Rage Aboud</li>
+<li>Wesley Santos da Silva</li>
+<li>Luis Carlos Rojas Torres</li>
+</ul>
+<p>NOTA: O repositorio deste trabalho se encontra em <code>https://github.com/LuisCarlosRojasTorres/MSA/blob/main/ReadMe.md</code> <a href="https://github.com/LuisCarlosRojasTorres/MSA/blob/main/ReadMe.md">LINK</a></p>
+<h2 id="1-a-namequestesconceituaisa-questões-conceituais">1. <a name="Questesconceituais" href=""></a> Questões conceituais </h2>
+<p><strong>1. Defina serviço RESTful.</strong></p>
+<p>Um serviço RESTful (Representational State Transfer) é uma abordagem de design de arquitetura de software para sistemas distribuídos na web. Essa arquitetura foi criada pelo cientista da computação norte-americano Roy Fielding. REST não é um protocolo ou padrão, mas sim um conjunto de restrições de arquitetura.<br>
+Quando um cliente faz uma solicitação usando uma API RESTful, essa API transfere uma representação do estado do recurso ao solicitante ou endpoint. Essa informação (ou representação) é entregue via HTTP utilizando um dos vários formatos possíveis: Javascript Object Notation (JSON), HTML, XLT, Python, PHP ou texto sem formatação.<br>
+Para uma API ser considerada do tipo RESTful, ela precisa está em conformidade com os seguintes critérios:</p>
+<ol>
+<li>
+<p>Ter uma arquitetura cliente/servidor formada por clientes, servidores e recursos, com solicitações gerenciadas por HTTP.</p>
+</li>
+<li>
+<p>Estabelecer uma comunicação stateless entre cliente e servidor.</p>
+</li>
+<li>
+<p>Armazenar dados em cache para otimizar as interações entre cliente e servidor.</p>
+</li>
+<li>
+<p>Ter uma interface uniforme entre os componentes para as informações serem transferidas em um formato padronizado.</p>
+</li>
+<li>
+<p>Ter um sistema em camadas que organiza os tipos de servidores envolvidos na recuperação das informações solicitadas em hierarquias que o cliente não pode ver.</p>
+</li>
+<li>
+<p>Possibilitar código sob demanda (opcional): a capacidade de enviar um código executável do servidor para o cliente quando solicitado para ampliar a funcionalidade disponível ao cliente.</p>
+<p>Desse modo, um serviço RESTful é um sistema distribuído baseado em recursos que adota os princípios do REST para fornecer uma interface simples e eficiente para interações entre cliente e servidor na web.</p>
+</li>
+</ol>
+<p><strong>2. Liste e explique os quatro principais princípios de serviços RESTful</strong></p>
+<ul>
+<li>
+<p>Usar os métodos HTTP explicitamente</p>
+<ul>
+<li>GET: Usado para recuperar informações de um recurso.</li>
+<li>POST: Utilizado para criar um novo recurso.</li>
+<li>PUT: Utilizado para atualizar um recurso existente.</li>
+<li>DELETE: Utilizado para remover um recurso.</li>
+<li>Além desses, há outros métodos HTTP, como OPTIONS, HEAD, PATCH, que também podem ser aplicados, mas esses quatro são os mais comuns em serviços RESTful</li>
+</ul>
+</li>
+<li>
+<p>Ser sem estado (stateless)</p>
+<ul>
+<li>Estabelecer uma comunicação stateless entre cliente e servidor significa que nenhuma informação do cliente é armazenada entre solicitações GET e toda as solicitações são separadas e desconectadas. Esse princípio implica que cada solicitação ao servidor deve conter todas as informações necessárias para que o servidor entenda e processe a solicitação, sem depender de nenhum estado mantido pelo servidor entre solicitações.</li>
+</ul>
+</li>
+<li>
+<p>Expor URIs como estrutura de diretórios</p>
+<ul>
+<li>Os recursos de um serviço RESTful devem ser identificados por URIs (Uniform Resource Identifiers) e que a estrutura dessas URIs deve seguir uma hierarquia semelhante a uma estrutura de diretórios. Por exemplo, em um serviço RESTful para um sistema de blog, a estrutura de URIs pode ser algo como: /blog/posts/comentarios.</li>
+</ul>
+</li>
+<li>
+<p>Transferir XML, JSON (JavaScript Object Notation) ou ambos</p>
+<ul>
+<li>Este princípio significa que os dados transferidos entre servidor e cliente devem ser representados em formatos interoperáveis, como XML (eXtensible Markup Language) ou JSON (JavaScript Object Notation). Esses formatos são utilizados na web e são fáceis de serializar e desserializar em várias linguagens de programação. O uso de ambos os formatos é opcional, entretanto, JSON é preferido devido à sua leveza e simplicidade.</li>
+</ul>
+</li>
+</ul>
+<p><strong>3. Apresente as diferenças entre serviços Web SOAP (ou serviço Web WS) e serviços Web RESTful</strong></p>
+<ul>
+<li>REST e SOAP são duas maneiras diferentes para a transmissão de dados online. Em resumo, eles definem como as APIs são criadas, possibilitando a comunicação dos dados entre aplicações web.
+<ul>
+<li>REST (Representational State Transfer) é um conjunto de princípios de arquitetura. Enquanto SOAP (Simple Object Access Protocol) é um protocolo oficial mantido pela World Wide Web Consortium (W3C). A principal diferença é que SOAP é um protocolo e REST, não. SOAP é baseado em um estilo de arquitetura mais rígido, centrado em operações (métodos) e contratos (WSDL). Geralmente segue uma abordagem orientada a serviços. REST adota recursos (identificados por URIs) e operações HTTP (métodos) para manipular esses recursos. Mais orientado a recursos e estado.</li>
+<li>Outra diferença entre ambos é o formato da mensagem, enquanto SOAP, as mensagens são estruturadas e definidas por um esquema XML, geralmente incluindo cabeçalhos, corpo da mensagem e possivelmente partes anexadas. Já no serviço RESTful pode usar uma variedade de formatos de mensagem, como JSON, XML, HTML, etc. Geralmente, o formato é mais flexível e pode ser escolhido com base na preferência ou necessidade do cliente.</li>
+<li>Quando o assunto é sobre ESTADO, também temos algumas diferenças. Em SOAP, pode-se manter o estado da sessão do cliente entre as chamadas de serviço usando mecanismos como SOAP sessions. Porém na arquitetura RESTful, Segue o princípio de ser sem estado.</li>
+<li>Em resumo, os serviços web SOAP oferecem segurança integrada e transações em conformidade que atendem a muitas necessidades empresariais, mas que também os deixam mais pesados, os serviços web RESTful é mais flexível, mais leves, e ideais para contextos mais modernos, como a Internet das Coisas (IoT), desenvolvimento de aplicações mobile e serverless.</li>
+</ul>
+</li>
+</ul>
+<p><strong>4. Na opinião do grupo, qual tipo de serviço é mais fácil e rápido de implementar? Justifique.</strong></p>
+<ul>
+<li>Na opinião do grupo, os serviços Web RESTful apresenta uma implementação mais eficiente devido sua facilidade e rapidez de implementação, além de uma boa flexibilidade para ser escalável. Também destacamos que os serviços Restful apresenta uma boa interpretação e entendimento das operações realizadas por essa arquitetura, pois pode-se usar formatos de dados mais leves, como JSON e métodos HTTP que simplifica a implementação e a compreensão.</li>
+</ul>
+<h2 id="2-a-namequestesprticasa-questões-práticas">2. <a name="Questesprticas" href=""></a> Questões práticas </h2>
+<ol>
+<li>Modele a estrutura dos dados providos pelo serviço, por exemplo, um modelo Entidade-Relacionamento ou um modelo de classes UML.</li>
+</ol>
+<ul>
+<li>Class Diagram<br>
+<img src="images\UMLClassDiagram.png" alt="UML Diagram"></li>
+</ul>
+<ol start="2">
+<li>Implemente um serviço Web RESTful com operações para:
+<ul>
+<li>Inserir um restaurante</li>
+<li>Retornar todos os restaurantes:</li>
+<li>Retornar um restaurante pelo <code>id</code></li>
+<li>Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade</li>
+<li>Atualizar restaurante, por exemplo, atualizar o endereço do restaurante</li>
+<li>Apagar um restaurante pelo seu <code>id</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="solução">Solução </h3>
+<ul>
+<li>Para apresentar a solução deste trabalho se utilizara a seguinte data:</li>
+</ul>
+<p><img src="images\Restaurants.png" alt=""></p>
+<ul>
+<li>Esta data convertida no formato json ficzaria da seguinte forma:</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>restaurantsList <span class="token operator">=</span> <span class="token punctuation">[</span>
+<span class="token punctuation">{</span>
+<span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Restaurant1"</span><span class="token punctuation">,</span>
+<span class="token string">"address"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"postalCode"</span><span class="token punctuation">:</span><span class="token string">"111"</span><span class="token punctuation">,</span>
+    <span class="token string">"streetAddress"</span><span class="token punctuation">:</span><span class="token string">"Rua Um número 1111"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressLocality"</span><span class="token punctuation">:</span><span class="token string">"Cidade1"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressRegion"</span><span class="token punctuation">:</span><span class="token string">"Region1"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressCountry"</span><span class="token punctuation">:</span><span class="token string">"Country1"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token string">"url"</span><span class="token punctuation">:</span> <span class="token string">"www.rest1.com.br"</span><span class="token punctuation">,</span>
+<span class="token string">"menu"</span><span class="token punctuation">:</span> <span class="token string">"www.rest1.com.br/menu"</span><span class="token punctuation">,</span>
+<span class="token string">"telephone"</span><span class="token punctuation">:</span> <span class="token string">"11 11111-1111"</span><span class="token punctuation">,</span>
+<span class="token string">"priceRange"</span><span class="token punctuation">:</span> <span class="token string">"$$"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span>
+<span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+<span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Restaurant2"</span><span class="token punctuation">,</span>
+<span class="token string">"address"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"postalCode"</span><span class="token punctuation">:</span><span class="token string">"222"</span><span class="token punctuation">,</span>
+    <span class="token string">"streetAddress"</span><span class="token punctuation">:</span><span class="token string">"Rua Dois número 2222"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressLocality"</span><span class="token punctuation">:</span><span class="token string">"Cidade2"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressRegion"</span><span class="token punctuation">:</span><span class="token string">"Region2"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressCountry"</span><span class="token punctuation">:</span><span class="token string">"Country2"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token string">"url"</span><span class="token punctuation">:</span> <span class="token string">"www.rest2.com.br"</span><span class="token punctuation">,</span>
+<span class="token string">"menu"</span><span class="token punctuation">:</span> <span class="token string">"www.rest2.com.br/menu"</span><span class="token punctuation">,</span>
+<span class="token string">"telephone"</span><span class="token punctuation">:</span> <span class="token string">"22 22222-2222"</span><span class="token punctuation">,</span>
+<span class="token string">"priceRange"</span><span class="token punctuation">:</span> <span class="token string">"$$$"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span>
+<span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+<span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Restaurant3"</span><span class="token punctuation">,</span>
+<span class="token string">"address"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"postalCode"</span><span class="token punctuation">:</span><span class="token string">"111"</span><span class="token punctuation">,</span>
+    <span class="token string">"streetAddress"</span><span class="token punctuation">:</span><span class="token string">"Rua Um número 3333"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressLocality"</span><span class="token punctuation">:</span><span class="token string">"Cidade1"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressRegion"</span><span class="token punctuation">:</span><span class="token string">"Region3"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressCountry"</span><span class="token punctuation">:</span><span class="token string">"Country3"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token string">"url"</span><span class="token punctuation">:</span> <span class="token string">"www.rest3.com.br"</span><span class="token punctuation">,</span>
+<span class="token string">"menu"</span><span class="token punctuation">:</span> <span class="token string">"www.rest3.com.br/menu"</span><span class="token punctuation">,</span>
+<span class="token string">"telephone"</span><span class="token punctuation">:</span> <span class="token string">"33 33333-3333"</span><span class="token punctuation">,</span>
+<span class="token string">"priceRange"</span><span class="token punctuation">:</span> <span class="token string">"$$$$"</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre><h4 id="inserir-um-restaurante">Inserir um restaurante </h4>
+<ul>
+<li>Para inserir um restaurante utilizaremos o comando <code>POST</code>, a seguir se apresenta a implementação em PYTHON do lado do server.</li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python py"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/api/restaurants"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"POST"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">create_task</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-if">if</span> <span class="token keyword keyword-not">not</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-or">or</span> <span class="token keyword keyword-not">not</span> <span class="token string">"title"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json<span class="token punctuation">:</span>
+        abort<span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">)</span>
+    newRestaurant <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"id"</span><span class="token punctuation">:</span> restaurantsList<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token string">"name"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">"address"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"address"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">"url"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"url"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">"menu"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"menu"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">"telephone"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"telephone"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">"priceRange"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"priceRange"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+    restaurantsList<span class="token punctuation">.</span>append<span class="token punctuation">(</span>newRestaurant<span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span>newRestaurant<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">201</span>
+</code></pre><ul>
+<li>Utilizando o Post do Postman:<br>
+<img src="images\PostRestaurant2.png" alt="Post in Postman"></li>
+<li>Output no navegador seria o seguinte:<br>
+<img src="images\PostRestaurant.png" alt="Output"></li>
+</ul>
+<h4 id="retornar-todos-os-restaurantes">Retornar todos os restaurantes: </h4>
+<ul>
+<li>Para retornar todos os restaurantes utilizaremos um GET para retornar a lista de restaurantes.</li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python py"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/api/restaurants"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"GET"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">get_restaurants</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span>restaurantsList<span class="token punctuation">)</span>
+</code></pre><ul>
+<li>Output no navegador:<br>
+<img src="images\ListOfRestaurants.png" alt="Lista de Restaurantes"></li>
+</ul>
+<h4 id="retornar-um-restaurante-pelo-id">Retornar um restaurante pelo <code>id</code>: </h4>
+<ul>
+<li>Para retornar um restaurante dado um <code>id</code> se adiciona o <code>/&lt;int:restaurant_id&gt;</code> no route. A implementação e apresentada:</li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python py"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/api/restaurants/&lt;int:restaurant_id&gt;"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"GET"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">get_restaurant_by_index</span><span class="token punctuation">(</span>restaurant_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"get_restaurant_by_index"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-try">try</span><span class="token punctuation">:</span>
+        <span class="token builtin">id</span> <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>restaurant_id<span class="token punctuation">)</span>
+        <span class="token keyword keyword-for">for</span> restaurant <span class="token keyword keyword-in">in</span> restaurantsList<span class="token punctuation">:</span>
+            <span class="token keyword keyword-if">if</span> restaurant<span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token builtin">id</span><span class="token punctuation">:</span>
+                <span class="token keyword keyword-if">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>restaurant<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                    <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span>restaurant<span class="token punctuation">)</span>
+        <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-except">except</span> <span class="token punctuation">(</span>ValueError<span class="token punctuation">,</span> TypeError<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre><ul>
+<li>O resquest é mostrado junto com o output no navegador:<br>
+<img src="images\RestaurantByIndex.png" alt="Restaurant By Index"></li>
+</ul>
+<h4 id="consultar-restaurante-pelos-atributos-do-endereço-por-exemplo-consultar-pela-cidade-retornando-os-restaurantes-existentes-na-cidade">Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade: </h4>
+<ul>
+<li>Para retornar todos os restaurantes que corresponden a uma cidade se utiliza um <code>GET</code> aprimorado. Neste caso os argumentos são obtidos utilizando o <code>request.args.get("addressLocality")</code>. A implementação é apresentada a seguir.</li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python py"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/api/restaurants"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"GET"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">get_restaurants</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    city <span class="token operator">=</span> request<span class="token punctuation">.</span>args<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"addressLocality"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> city <span class="token keyword keyword-is">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span>restaurantsList<span class="token punctuation">)</span>
+    <span class="token keyword keyword-else">else</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">" - City: "</span> <span class="token operator">+</span> city<span class="token punctuation">)</span>
+        ans <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-for">for</span> restaurant <span class="token keyword keyword-in">in</span> restaurantsList<span class="token punctuation">:</span>
+            <span class="token keyword keyword-if">if</span> restaurant<span class="token punctuation">[</span><span class="token string">"address"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"addressLocality"</span><span class="token punctuation">]</span> <span class="token operator">==</span> city<span class="token punctuation">:</span>
+                ans<span class="token punctuation">.</span>append<span class="token punctuation">(</span>restaurant<span class="token punctuation">)</span>
+            
+        <span class="token keyword keyword-if">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>restaurant<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"Restaurant selected by address new way"</span><span class="token punctuation">:</span> ans<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><ul>
+<li>O resquest é mostrado junto com o output no navegador:<br>
+<img src="images\GetByCity.png" alt="Restaurant By City"></li>
+</ul>
+<h4 id="atualizar-restaurante-por-exemplo-atualizar-o-endereço-do-restaurante">Atualizar restaurante, por exemplo, atualizar o endereço do restaurante: </h4>
+<ul>
+<li>Para atualizar um restaurante de um <code>id</code> específico se utiliza o comando <code>PUT</code>.</li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python py"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/api/restaurants/&lt;int:restaurant_id&gt;"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"PUT"</span><span class="token punctuation">,</span> <span class="token string">"OPTIONS"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">update_restaurant</span><span class="token punctuation">(</span>restaurant_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    restaurant <span class="token operator">=</span> <span class="token punctuation">[</span>restaurant <span class="token keyword keyword-for">for</span> restaurant <span class="token keyword keyword-in">in</span> restaurantsList <span class="token keyword keyword-if">if</span> restaurant<span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span> <span class="token operator">==</span> restaurant_id<span class="token punctuation">]</span>
+    <span class="token keyword keyword-if">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>restaurant<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token keyword keyword-not">not</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-or">or</span> <span class="token keyword keyword-not">not</span> <span class="token string">"name"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json<span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"Name"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token string">"name"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-and">and</span> <span class="token builtin">type</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"Name"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token string">"address"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-and">and</span> <span class="token builtin">type</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"address"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token builtin">dict</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"Address"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token string">"url"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-and">and</span> <span class="token builtin">type</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"url"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword keyword-is">is</span> <span class="token keyword keyword-not">not</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"URL"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token string">"menu"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-and">and</span> <span class="token builtin">type</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"menu"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword keyword-is">is</span> <span class="token keyword keyword-not">not</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"Menu"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token string">"telephone"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-and">and</span> <span class="token builtin">type</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"telephone"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword keyword-is">is</span> <span class="token keyword keyword-not">not</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"Telephone"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token string">"priceRange"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-and">and</span> <span class="token builtin">type</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"priceRange"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword keyword-is">is</span> <span class="token keyword keyword-not">not</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"Price Range"</span><span class="token punctuation">)</span>
+
+    restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"address"</span><span class="token punctuation">]</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"address"</span><span class="token punctuation">,</span> restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"address"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"url"</span><span class="token punctuation">]</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"url"</span><span class="token punctuation">,</span> restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"url"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"menu"</span><span class="token punctuation">]</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"menu"</span><span class="token punctuation">,</span> restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"menu"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"telephone"</span><span class="token punctuation">]</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"telephone"</span><span class="token punctuation">,</span> restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"telephone"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"priceRange"</span><span class="token punctuation">]</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"priceRange"</span><span class="token punctuation">,</span> restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"priceRange"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span>restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre><ul>
+<li>Se apresenta a lista de Restaurantes antes del PUT:<br>
+<img src="images\PUT01.png" alt="Lista de Restaurantes"></li>
+<li>O PUT no Postman junto com a data a atualizar é apresentada na seguinte imagem:<br>
+<img src="images\PUT02.png" alt="PUT in Postman"></li>
+<li>O resultado do PUT é apresentado junto com a lista de restaurantes:<br>
+<img src="images\PUT03.png" alt="Lista de Restaurantes"></li>
+</ul>
+<h4 id="apagar-um-restaurante-pelo-seu-id">Apagar um restaurante pelo seu <code>id</code> </h4>
+<ul>
+<li>Para apagar um restaurante dado um <code>id</code> se utiliza o comando <code>DELETE</code></li>
+</ul>
+<pre data-role="codeBlock" data-info="py" class="language-python py"><code><span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/api/restaurants/&lt;int:restaurants_id&gt;"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"DELETE"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">delete_restaurants</span><span class="token punctuation">(</span>restaurants_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    restaurants <span class="token operator">=</span> <span class="token punctuation">[</span>restaurants <span class="token keyword keyword-for">for</span> restaurants <span class="token keyword keyword-in">in</span> restaurantsList <span class="token keyword keyword-if">if</span> restaurants<span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span> <span class="token operator">==</span> restaurants_id<span class="token punctuation">]</span>
+    <span class="token keyword keyword-if">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>restaurants<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        abort<span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">)</span>
+    restaurantsList<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>restaurants<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"Result Of Deletion by Id"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><ul>
+<li>O request no Postman é apresentado a seguir:<br>
+<img src="images\Delete1.png" alt="Deleted in Postman"></li>
+<li>Ao ser deletado com sucesso, o postman apresentará a seguiutne mensagem:<br>
+<img src="images\Delete2.png" alt="Output"></li>
+<li>O Output no navegador amostra que nao existe mais o <code>Restaurante2</code> com <code>id=2</code>:<br>
+<img src="images\Delete3.png" alt="Output"></li>
+</ul>
+<ol start="3">
+<li>Opcional Utilize um banco de dados para armazenar os dados.</li>
+</ol>
+<pre data-role="codeBlock" data-info="py" class="language-python py"><code><span class="token keyword keyword-def">def</span> <span class="token function">HandleDatabase</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+	<span class="token comment">#Insert Code HERE	</span>
+	<span class="token keyword keyword-return">return</span>
+</code></pre><ol start="4">
+<li>
+<p>Implemente um cliente (por exemplo, um script em Python usando a biblioteca requests) que invoque este serviço simulando operações para inserção, consulta, atualização e remoção.</p>
+<ul>
+<li>Métodos <code>GET</code> :</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-import">import</span> requests
+
+SERVICE_HOST <span class="token operator">=</span> <span class="token string">'localhost'</span>
+SERVICE_HOST_PORT<span class="token operator">=</span><span class="token string">'4999'</span>
+SERVICE_STUDENT_PATH <span class="token operator">=</span> <span class="token string">'/api/restaurants'</span>
+
+<span class="token keyword keyword-def">def</span> <span class="token function">get_endpoint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> <span class="token string">'http://'</span><span class="token operator">+</span> SERVICE_HOST<span class="token operator">+</span><span class="token string">':'</span><span class="token operator">+</span>SERVICE_HOST_PORT
+
+<span class="token keyword keyword-def">def</span> <span class="token function">get_restaurants</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>get_endpoint<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span>SERVICE_STUDENT_PATH<span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> response<span class="token punctuation">.</span>json<span class="token punctuation">:</span>
+        <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-def">def</span> <span class="token function">get_restaurants_by_Id</span><span class="token punctuation">(</span>restaurant_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>get_endpoint<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span>SERVICE_STUDENT_PATH<span class="token operator">+</span><span class="token string">'/'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>restaurant_id<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> response<span class="token punctuation">.</span>json<span class="token punctuation">:</span>
+        <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-def">def</span> <span class="token function">get_restaurants_by_City</span><span class="token punctuation">(</span>restaurant_addr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>get_endpoint<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span>SERVICE_STUDENT_PATH<span class="token operator">+</span><span class="token string">'/'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>restaurant_addr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> response<span class="token punctuation">.</span>json<span class="token punctuation">:</span>
+        <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"------------------------------------"</span><span class="token punctuation">)</span>
+get_restaurants<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"------------------------------------"</span><span class="token punctuation">)</span>
+get_restaurants_by_Id<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"------------------------------------"</span><span class="token punctuation">)</span>
+get_restaurants_by_City<span class="token punctuation">(</span><span class="token string">"Cidade1"</span><span class="token punctuation">)</span>
+</code></pre><ul>
+<li>Métodos <code>DELETE</code>:</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-def">def</span> <span class="token function">delete_restaurants</span><span class="token punctuation">(</span>restaurant_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    response <span class="token operator">=</span> requests<span class="token punctuation">.</span>delete<span class="token punctuation">(</span>get_endpoint<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span>SERVICE_STUDENT_PATH<span class="token operator">+</span><span class="token string">'/'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>restaurant_id<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> response<span class="token punctuation">.</span>json<span class="token punctuation">:</span>
+        <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"------------------------------------"</span><span class="token punctuation">)</span>
+delete_restaurants<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+</code></pre><ul>
+<li>Métodos <code>POST</code>:</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-def">def</span> <span class="token function">post_restaurants</span><span class="token punctuation">(</span>dummy_json<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    response <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>get_endpoint<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span>SERVICE_STUDENT_PATH<span class="token punctuation">,</span> json<span class="token operator">=</span>dummy_json<span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> response<span class="token punctuation">.</span>json<span class="token punctuation">:</span>
+        <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+post_dummy_json <span class="token operator">=</span> <span class="token punctuation">{</span>
+<span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Restaurant3"</span><span class="token punctuation">,</span>
+<span class="token string">"address"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+<span class="token string">"postalCode"</span><span class="token punctuation">:</span><span class="token string">"111"</span><span class="token punctuation">,</span>
+<span class="token string">"streetAddress"</span><span class="token punctuation">:</span><span class="token string">"Rua Tres número 3333"</span><span class="token punctuation">,</span>
+<span class="token string">"addressLocality"</span><span class="token punctuation">:</span><span class="token string">"Cidade1"</span><span class="token punctuation">,</span>
+<span class="token string">"addressRegion"</span><span class="token punctuation">:</span><span class="token string">"Region1"</span><span class="token punctuation">,</span>
+<span class="token string">"addressCountry"</span><span class="token punctuation">:</span><span class="token string">"Country1"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token string">"url"</span><span class="token punctuation">:</span> <span class="token string">"www.rest3.com.br"</span><span class="token punctuation">,</span>
+<span class="token string">"menu"</span><span class="token punctuation">:</span> <span class="token string">"www.rest3.com.br/menu"</span><span class="token punctuation">,</span>
+<span class="token string">"telephone"</span><span class="token punctuation">:</span> <span class="token string">"333-3333"</span><span class="token punctuation">,</span>
+<span class="token string">"priceRange"</span><span class="token punctuation">:</span> <span class="token string">"$$33-333"</span>
+<span class="token punctuation">}</span>
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"------------------------------------"</span><span class="token punctuation">)</span>
+post_restaurants<span class="token punctuation">(</span>post_dummy_json<span class="token punctuation">)</span>   
+</code></pre><ul>
+<li>Métodos <code>PUT</code>:</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-def">def</span> <span class="token function">put_restaurants</span><span class="token punctuation">(</span>dummy_json<span class="token punctuation">,</span> restaurant_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    response <span class="token operator">=</span> requests<span class="token punctuation">.</span>put<span class="token punctuation">(</span>get_endpoint<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span>SERVICE_STUDENT_PATH<span class="token operator">+</span><span class="token string">'/'</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>restaurant_id<span class="token punctuation">)</span><span class="token punctuation">,</span> json<span class="token operator">=</span>dummy_json<span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> response<span class="token punctuation">.</span>json<span class="token punctuation">:</span>
+        <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+put_dummy_json <span class="token operator">=</span> <span class="token punctuation">{</span>
+<span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Restaurant3"</span><span class="token punctuation">,</span>
+<span class="token string">"address"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"postalCode"</span><span class="token punctuation">:</span><span class="token string">"111"</span><span class="token punctuation">,</span>
+    <span class="token string">"streetAddress"</span><span class="token punctuation">:</span><span class="token string">"Rua Tres número 3333"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressLocality"</span><span class="token punctuation">:</span><span class="token string">"Cidade1"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressRegion"</span><span class="token punctuation">:</span><span class="token string">"Region1"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressCountry"</span><span class="token punctuation">:</span><span class="token string">"Country1"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token string">"url"</span><span class="token punctuation">:</span> <span class="token string">"www.new-rest3.com.br"</span><span class="token punctuation">,</span>
+<span class="token string">"menu"</span><span class="token punctuation">:</span> <span class="token string">"www.new-rest3.com.br/menu"</span><span class="token punctuation">,</span>
+<span class="token string">"telephone"</span><span class="token punctuation">:</span> <span class="token string">"333-0000"</span><span class="token punctuation">,</span>
+<span class="token string">"priceRange"</span><span class="token punctuation">:</span> <span class="token string">"$$44-4444"</span>
+<span class="token punctuation">}</span>
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"------------------------------------"</span><span class="token punctuation">)</span>
+put_restaurants<span class="token punctuation">(</span>put_dummy_json<span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>  
+</code></pre><h3>FrontEnd Videos</h3>
+<ul>
+<li>Criar e buscar restaurantes: <a href="https://github.com/LuisCarlosRojasTorres/MSA/blob/frontwebClient/Videos/CriarBuscarRestaurante.mov">https://github.com/LuisCarlosRojasTorres/MSA/blob/frontwebClient/Videos/CriarBuscarRestaurante.mov</a></li>
+<li>Gerenciar Restaurante: <a href="https://github.com/LuisCarlosRojasTorres/MSA/blob/frontwebClient/Videos/GerenciarRestaurante.mov">https://github.com/LuisCarlosRojasTorres/MSA/blob/frontwebClient/Videos/GerenciarRestaurante.mov</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="3-a-nameanexoa-anexo">3. <a name="Anexo" href=""></a> Anexo </h2>
+<ul>
+<li>Codigo completo do Server-side:</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> flask <span class="token keyword keyword-import">import</span> Flask<span class="token punctuation">,</span> jsonify<span class="token punctuation">,</span> make_response<span class="token punctuation">,</span> request
+<span class="token keyword keyword-from">from</span> flask_cors <span class="token keyword keyword-import">import</span> CORS<span class="token punctuation">,</span> cross_origin
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+CORS<span class="token punctuation">(</span>app<span class="token punctuation">,</span> origins<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'http://localhost:8000'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> always_send<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+HOST <span class="token operator">=</span> <span class="token string">"localhost"</span>
+PORT <span class="token operator">=</span> <span class="token number">5000</span>
+
+restaurantsList <span class="token operator">=</span> <span class="token punctuation">[</span>
+<span class="token punctuation">{</span>
+<span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Restaurant1"</span><span class="token punctuation">,</span>
+<span class="token string">"address"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"postalCode"</span><span class="token punctuation">:</span><span class="token string">"111"</span><span class="token punctuation">,</span>
+    <span class="token string">"streetAddress"</span><span class="token punctuation">:</span><span class="token string">"Rua Um número 1111"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressLocality"</span><span class="token punctuation">:</span><span class="token string">"Cidade1"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressRegion"</span><span class="token punctuation">:</span><span class="token string">"Region1"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressCountry"</span><span class="token punctuation">:</span><span class="token string">"Country1"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token string">"url"</span><span class="token punctuation">:</span> <span class="token string">"www.rest1.com.br"</span><span class="token punctuation">,</span>
+<span class="token string">"menu"</span><span class="token punctuation">:</span> <span class="token string">"www.rest1.com.br/menu"</span><span class="token punctuation">,</span>
+<span class="token string">"telephone"</span><span class="token punctuation">:</span> <span class="token string">"11 11111-1111"</span><span class="token punctuation">,</span>
+<span class="token string">"priceRange"</span><span class="token punctuation">:</span> <span class="token string">"$$"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span>
+<span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+<span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Restaurant2"</span><span class="token punctuation">,</span>
+<span class="token string">"address"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"postalCode"</span><span class="token punctuation">:</span><span class="token string">"222"</span><span class="token punctuation">,</span>
+    <span class="token string">"streetAddress"</span><span class="token punctuation">:</span><span class="token string">"Rua Dois número 2222"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressLocality"</span><span class="token punctuation">:</span><span class="token string">"Cidade2"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressRegion"</span><span class="token punctuation">:</span><span class="token string">"Region2"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressCountry"</span><span class="token punctuation">:</span><span class="token string">"Country2"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token string">"url"</span><span class="token punctuation">:</span> <span class="token string">"www.rest2.com.br"</span><span class="token punctuation">,</span>
+<span class="token string">"menu"</span><span class="token punctuation">:</span> <span class="token string">"www.rest2.com.br/menu"</span><span class="token punctuation">,</span>
+<span class="token string">"telephone"</span><span class="token punctuation">:</span> <span class="token string">"22 22222-2222"</span><span class="token punctuation">,</span>
+<span class="token string">"priceRange"</span><span class="token punctuation">:</span> <span class="token string">"$$$"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span>
+<span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+<span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Restaurant3"</span><span class="token punctuation">,</span>
+<span class="token string">"address"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"postalCode"</span><span class="token punctuation">:</span><span class="token string">"111"</span><span class="token punctuation">,</span>
+    <span class="token string">"streetAddress"</span><span class="token punctuation">:</span><span class="token string">"Rua Um número 3333"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressLocality"</span><span class="token punctuation">:</span><span class="token string">"Cidade1"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressRegion"</span><span class="token punctuation">:</span><span class="token string">"Region3"</span><span class="token punctuation">,</span>
+    <span class="token string">"addressCountry"</span><span class="token punctuation">:</span><span class="token string">"Country3"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token string">"url"</span><span class="token punctuation">:</span> <span class="token string">"www.rest3.com.br"</span><span class="token punctuation">,</span>
+<span class="token string">"menu"</span><span class="token punctuation">:</span> <span class="token string">"www.rest3.com.br/menu"</span><span class="token punctuation">,</span>
+<span class="token string">"telephone"</span><span class="token punctuation">:</span> <span class="token string">"33 33333-3333"</span><span class="token punctuation">,</span>
+<span class="token string">"priceRange"</span><span class="token punctuation">:</span> <span class="token string">"$$$$"</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> <span class="token string">"Trabalho N2! Arquitetura de Microserviços"</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/api/restaurants"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"GET"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">get_restaurants</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    city <span class="token operator">=</span> request<span class="token punctuation">.</span>args<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"addressLocality"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> city <span class="token keyword keyword-is">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span>restaurantsList<span class="token punctuation">)</span>
+    <span class="token keyword keyword-else">else</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">" - City: "</span> <span class="token operator">+</span> city<span class="token punctuation">)</span>
+        ans <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-for">for</span> restaurant <span class="token keyword keyword-in">in</span> restaurantsList<span class="token punctuation">:</span>
+            <span class="token keyword keyword-if">if</span> restaurant<span class="token punctuation">[</span><span class="token string">"address"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"addressLocality"</span><span class="token punctuation">]</span> <span class="token operator">==</span> city<span class="token punctuation">:</span>
+                ans<span class="token punctuation">.</span>append<span class="token punctuation">(</span>restaurant<span class="token punctuation">)</span>
+            
+        <span class="token keyword keyword-if">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>restaurant<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"Restaurant selected by address new way"</span><span class="token punctuation">:</span> ans<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/api/restaurants/&lt;int:restaurant_id&gt;"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"GET"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">get_restaurant_by_index</span><span class="token punctuation">(</span>restaurant_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"get_restaurant_by_index"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-try">try</span><span class="token punctuation">:</span>
+        <span class="token builtin">id</span> <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>restaurant_id<span class="token punctuation">)</span>
+        <span class="token keyword keyword-for">for</span> restaurant <span class="token keyword keyword-in">in</span> restaurantsList<span class="token punctuation">:</span>
+            <span class="token keyword keyword-if">if</span> restaurant<span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token builtin">id</span><span class="token punctuation">:</span>
+                <span class="token keyword keyword-if">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>restaurant<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                    <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span>restaurant<span class="token punctuation">)</span>
+        <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-except">except</span> <span class="token punctuation">(</span>ValueError<span class="token punctuation">,</span> TypeError<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/api/restaurants/&lt;restaurant_addr&gt;"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"GET"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">get_restaurant_by_City</span><span class="token punctuation">(</span>restaurant_addr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"get_restaurant_by_City"</span><span class="token punctuation">)</span>
+    ans <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-for">for</span> restaurant <span class="token keyword keyword-in">in</span> restaurantsList<span class="token punctuation">:</span>
+        <span class="token keyword keyword-if">if</span> restaurant<span class="token punctuation">[</span><span class="token string">"address"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"addressLocality"</span><span class="token punctuation">]</span> <span class="token operator">==</span> restaurant_addr<span class="token punctuation">:</span>
+            ans<span class="token punctuation">.</span>append<span class="token punctuation">(</span>restaurant<span class="token punctuation">)</span>
+            
+    <span class="token keyword keyword-if">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>restaurant<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword keyword-or">or</span> <span class="token builtin">len</span><span class="token punctuation">(</span>ans<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span>ans<span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/api/restaurants/cities"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"GET"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">get_AllCities</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    ans <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-for">for</span> restaurant <span class="token keyword keyword-in">in</span> restaurantsList<span class="token punctuation">:</span>
+        <span class="token keyword keyword-if">if</span> restaurant<span class="token punctuation">[</span><span class="token string">"address"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"addressLocality"</span><span class="token punctuation">]</span> <span class="token keyword keyword-not">not</span> <span class="token keyword keyword-in">in</span> ans<span class="token punctuation">:</span>
+            <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">" - City:"</span> <span class="token operator">+</span> restaurant<span class="token punctuation">[</span><span class="token string">"address"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"addressLocality"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            ans<span class="token punctuation">.</span>append<span class="token punctuation">(</span>restaurant<span class="token punctuation">[</span><span class="token string">"address"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"addressLocality"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            
+    <span class="token keyword keyword-if">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>ans<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    ans<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"cities"</span><span class="token punctuation">:</span> ans<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>errorhandler</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">not_found</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> make_response<span class="token punctuation">(</span>jsonify<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"error"</span><span class="token punctuation">:</span> <span class="token string">"Restaurante não encontrado!"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">404</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>errorhandler</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">bad_request</span><span class="token punctuation">(</span>field<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> make_response<span class="token punctuation">(</span>jsonify<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"error"</span><span class="token punctuation">:</span> <span class="token string">"O {} é mandatório!"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>field<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/api/restaurants"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"POST"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">create_restaurant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-if">if</span> <span class="token keyword keyword-not">not</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-or">or</span> <span class="token keyword keyword-not">not</span> <span class="token string">"name"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-or">or</span> <span class="token keyword keyword-not">not</span> request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"Nome"</span><span class="token punctuation">)</span>
+    newRestaurant <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">"id"</span><span class="token punctuation">:</span> restaurantsList<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token string">"name"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token string">"address"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"address"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string">"url"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"url"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string">"menu"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"menu"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string">"telephone"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"telephone"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string">"priceRange"</span><span class="token punctuation">:</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"priceRange"</span><span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+    restaurantsList<span class="token punctuation">.</span>append<span class="token punctuation">(</span>newRestaurant<span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span>newRestaurant<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">201</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/api/restaurants/&lt;int:restaurant_id&gt;"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"PUT"</span><span class="token punctuation">,</span> <span class="token string">"OPTIONS"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">update_restaurant</span><span class="token punctuation">(</span>restaurant_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    restaurant <span class="token operator">=</span> <span class="token punctuation">[</span>restaurant <span class="token keyword keyword-for">for</span> restaurant <span class="token keyword keyword-in">in</span> restaurantsList <span class="token keyword keyword-if">if</span> restaurant<span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span> <span class="token operator">==</span> restaurant_id<span class="token punctuation">]</span>
+    <span class="token keyword keyword-if">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>restaurant<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token keyword keyword-not">not</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-or">or</span> <span class="token keyword keyword-not">not</span> <span class="token string">"name"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json<span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"Name"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token string">"name"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-and">and</span> <span class="token builtin">type</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"Name"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token string">"address"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-and">and</span> <span class="token builtin">type</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"address"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token builtin">dict</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"Address"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token string">"url"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-and">and</span> <span class="token builtin">type</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"url"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword keyword-is">is</span> <span class="token keyword keyword-not">not</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"URL"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token string">"menu"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-and">and</span> <span class="token builtin">type</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"menu"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword keyword-is">is</span> <span class="token keyword keyword-not">not</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"Menu"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token string">"telephone"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-and">and</span> <span class="token builtin">type</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"telephone"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword keyword-is">is</span> <span class="token keyword keyword-not">not</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"Telephone"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-if">if</span> <span class="token string">"priceRange"</span> <span class="token keyword keyword-in">in</span> request<span class="token punctuation">.</span>json <span class="token keyword keyword-and">and</span> <span class="token builtin">type</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>json<span class="token punctuation">[</span><span class="token string">"priceRange"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword keyword-is">is</span> <span class="token keyword keyword-not">not</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> bad_request<span class="token punctuation">(</span><span class="token string">"Price Range"</span><span class="token punctuation">)</span>
+
+    restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span> restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"address"</span><span class="token punctuation">]</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"address"</span><span class="token punctuation">,</span> restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"address"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"url"</span><span class="token punctuation">]</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"url"</span><span class="token punctuation">,</span> restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"url"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"menu"</span><span class="token punctuation">]</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"menu"</span><span class="token punctuation">,</span> restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"menu"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"telephone"</span><span class="token punctuation">]</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"telephone"</span><span class="token punctuation">,</span> restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"telephone"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"priceRange"</span><span class="token punctuation">]</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"priceRange"</span><span class="token punctuation">,</span> restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"priceRange"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span>restaurant<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">"/api/restaurants/&lt;int:restaurant_id&gt;"</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"DELETE"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">delete_restaurants</span><span class="token punctuation">(</span>restaurant_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-try">try</span><span class="token punctuation">:</span>
+        <span class="token builtin">id</span> <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>restaurant_id<span class="token punctuation">)</span>
+        <span class="token keyword keyword-for">for</span> restaurant <span class="token keyword keyword-in">in</span> restaurantsList<span class="token punctuation">:</span>
+            <span class="token keyword keyword-if">if</span> restaurant<span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token builtin">id</span><span class="token punctuation">:</span>
+                <span class="token keyword keyword-if">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>restaurant<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                    <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                restaurantsList<span class="token punctuation">.</span>remove<span class="token punctuation">(</span>restaurant<span class="token punctuation">)</span>
+                <span class="token keyword keyword-return">return</span> jsonify<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"resultMessage"</span><span class="token punctuation">:</span> <span class="token string">"Restaurante {}, com o ID: {} foi deletado com sucesso"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>restaurant<span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> restaurant<span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-except">except</span> <span class="token punctuation">(</span>ValueError<span class="token punctuation">,</span> TypeError<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> not_found<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>after_request</span>
+<span class="token keyword keyword-def">def</span> <span class="token function">after_request</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  response<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token string">'Access-Control-Allow-Origin'</span><span class="token punctuation">,</span> <span class="token string">'*'</span><span class="token punctuation">)</span>
+  response<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token string">'Access-Control-Allow-Headers'</span><span class="token punctuation">,</span> <span class="token string">'Content-Type,Authorization'</span><span class="token punctuation">)</span>
+  response<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token string">'Access-Control-Allow-Methods'</span><span class="token punctuation">,</span> <span class="token string">'GET,PUT,POST,DELETE,OPTIONS'</span><span class="token punctuation">)</span>
+  <span class="token keyword keyword-return">return</span> response
+
+<span class="token keyword keyword-if">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>host<span class="token operator">=</span>HOST<span class="token punctuation">,</span> port<span class="token operator">=</span>PORT<span class="token punctuation">,</span> debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    app<span class="token punctuation">.</span>register_error_handler<span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">,</span> bad_request<span class="token punctuation">)</span>
+    app<span class="token punctuation">.</span>register_error_handler<span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">,</span> not_found<span class="token punctuation">)</span>
+</code></pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
