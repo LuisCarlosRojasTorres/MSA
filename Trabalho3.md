@@ -9,7 +9,7 @@
 		* 2.1.3. [Inserir um restaurante](#Inserirumrestaurante-1)
 		* 2.1.4. [Retornar um restaurante pelo `id`](#Retornarumrestaurantepeloid)
 		* 2.1.5. [Inserir um restaurante](#Inserirumrestaurante-1)
-		* 2.1.6. [Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade:](#Consultarrestaurantepelosatributosdoendereoporexemploconsultarpelacidaderetornandoosrestaurantesexistentesnacidade:)
+		* 2.1.6. [Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade](#Consultarrestaurantepelosatributosdoendereoporexemploconsultarpelacidaderetornandoosrestaurantesexistentesnacidade)
 		* 2.1.7. [Inserir um restaurante](#Inserirumrestaurante-1)
 		* 2.1.8. [Atualizar restaurante, por exemplo, atualizar o endereço do restaurante](#Atualizarrestauranteporexemploatualizaroendereodorestaurante)
 		* 2.1.9. [Inserir um restaurante](#Inserirumrestaurante-1)
@@ -144,7 +144,7 @@ restaurantsList = [
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
 
-####  2.1.6. <a name='Consultarrestaurantepelosatributosdoendereoporexemploconsultarpelacidaderetornandoosrestaurantesexistentesnacidade:'></a>Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade
+####  2.1.6. <a name='Consultarrestaurantepelosatributosdoendereoporexemploconsultarpelacidaderetornandoosrestaurantesexistentesnacidade'></a>Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade
 
 ####  2.1.7. <a name='Inserirumrestaurante-1'></a>Inserir um restaurante
 
