@@ -6,15 +6,10 @@
 	* 2.1. [Solução](#Soluo)
 		* 2.1.1. [Inserir um restaurante](#Inserirumrestaurante)
 		* 2.1.2. [Retornar todos os restaurantes](#Retornartodososrestaurantes)
-		* 2.1.3. [Inserir um restaurante](#Inserirumrestaurante-1)
-		* 2.1.4. [Retornar um restaurante pelo `id`](#Retornarumrestaurantepeloid)
-		* 2.1.5. [Inserir um restaurante](#Inserirumrestaurante-1)
-		* 2.1.6. [Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade](#Consultarrestaurantepelosatributosdoendereoporexemploconsultarpelacidaderetornandoosrestaurantesexistentesnacidade)
-		* 2.1.7. [Inserir um restaurante](#Inserirumrestaurante-1)
-		* 2.1.8. [Atualizar restaurante, por exemplo, atualizar o endereço do restaurante](#Atualizarrestauranteporexemploatualizaroendereodorestaurante)
-		* 2.1.9. [Inserir um restaurante](#Inserirumrestaurante-1)
-		* 2.1.10. [Apagar um restaurante pelo seu `id`](#Apagarumrestaurantepeloseuid)
-		* 2.1.11. [Inserir um restaurante](#Inserirumrestaurante-1)
+		* 2.1.3. [Retornar um restaurante pelo `id`](#Retornarumrestaurantepeloid)
+		* 2.1.4. [Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade](#Consultarrestaurantepelosatributosdoendereoporexemploconsultarpelacidaderetornandoosrestaurantesexistentesnacidade)
+		* 2.1.5. [Atualizar restaurante, por exemplo, atualizar o endereço do restaurante](#Atualizarrestauranteporexemploatualizaroendereodorestaurante)
+		* 2.1.6. [Apagar um restaurante pelo seu `id`](#Apagarumrestaurantepeloseuid)		
 * 3. [ Anexo](#Anexo)
 
 <!-- vscode-markdown-toc-config
@@ -113,72 +108,86 @@ restaurantsList = [
 ####  2.1.1. <a name='Inserirumrestaurante'></a>Inserir um restaurante
 
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
+- TODO...
 
 ##### Explicação dos passos utilizados para elaborar o contrato
+- TODO...
 
 ##### Printscreen da especificação no Swagger Editor
+- TODO...
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
+- TODO...
 
 ####  2.1.2. <a name='Retornartodososrestaurantes'></a>Retornar todos os restaurantes
 
-####  2.1.3. <a name='Inserirumrestaurante-1'></a>Inserir um restaurante
-
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
+- TODO...
 
 ##### Explicação dos passos utilizados para elaborar o contrato
+- TODO...
 
 ##### Printscreen da especificação no Swagger Editor
+- TODO...
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
+- TODO...
 
-####  2.1.4. <a name='Retornarumrestaurantepeloid'></a>Retornar um restaurante pelo `id`
-
-####  2.1.5. <a name='Inserirumrestaurante-1'></a>Inserir um restaurante
+####  2.1.3. <a name='Retornarumrestaurantepeloid'></a>Retornar um restaurante pelo `id`
 
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
+- TODO...
 
 ##### Explicação dos passos utilizados para elaborar o contrato
+- TODO...
 
 ##### Printscreen da especificação no Swagger Editor
+- TODO...
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
+- TODO...
 
-####  2.1.6. <a name='Consultarrestaurantepelosatributosdoendereoporexemploconsultarpelacidaderetornandoosrestaurantesexistentesnacidade'></a>Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade
-
-####  2.1.7. <a name='Inserirumrestaurante-1'></a>Inserir um restaurante
+####  2.1.4. <a name='Consultarrestaurantepelosatributosdoendereoporexemploconsultarpelacidaderetornandoosrestaurantesexistentesnacidade'></a>Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade
 
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
+- TODO...
 
 ##### Explicação dos passos utilizados para elaborar o contrato
+- TODO...
 
 ##### Printscreen da especificação no Swagger Editor
+- TODO...
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
+- TODO...
 
-####  2.1.8. <a name='Atualizarrestauranteporexemploatualizaroendereodorestaurante'></a>Atualizar restaurante, por exemplo, atualizar o endereço do restaurante
-
-####  2.1.9. <a name='Inserirumrestaurante-1'></a>Inserir um restaurante
+####  2.1.5. <a name='Atualizarrestauranteporexemploatualizaroendereodorestaurante'></a>Atualizar restaurante, por exemplo, atualizar o endereço do restaurante
 
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
+- TODO...
 
 ##### Explicação dos passos utilizados para elaborar o contrato
+- TODO...
 
 ##### Printscreen da especificação no Swagger Editor
+- TODO...
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
+- TODO...
 
-####  2.1.10. <a name='Apagarumrestaurantepeloseuid'></a>Apagar um restaurante pelo seu `id`
-
-####  2.1.11. <a name='Inserirumrestaurante-1'></a>Inserir um restaurante
+####  2.1.6. <a name='Apagarumrestaurantepeloseuid'></a>Apagar um restaurante pelo seu `id`
 
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
+- TODO...
 
 ##### Explicação dos passos utilizados para elaborar o contrato
+- TODO...
 
 ##### Printscreen da especificação no Swagger Editor
+- TODO...
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
+- TODO...
 
 ##  3. <a name='Anexo'></a> Anexo
 
