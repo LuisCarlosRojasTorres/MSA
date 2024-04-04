@@ -160,7 +160,8 @@ components:
 ####  2.1.1. <a name='Inserirumrestaurante'></a>Inserir um restaurante
 
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
-- TODO ...
+- YAML
+- JSON
 ##### Explicação dos passos utilizados para elaborar o contrato
 - TODO...
 
@@ -291,6 +292,135 @@ components:
 - TODO...
 
 ##  3. <a name='Anexo'></a> Anexo
+- YAML completo
+``` yaml
+openapi: 3.0.3
+info:
+  title: Trabalho 3 - Restaurants API - OpenAPI 3.0
+  description: |-
+    Integrantes:
+    - Breno Rage Aboud
+    - Wesley Santos da Silva
+    - Luis Carlos Rojas Torres
+    - Álvaro Jr
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.11
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: http://127.0.0.1:5000/api/
+tags:
+  - name: restaurants
+    description: Everything about your Restaurants
+    externalDocs:
+      description: The repository of the back-end service.
+      url: https://github.com/LuisCarlosRojasTorres/MSA/blob/main/Trabalho3.md
+paths:
+  /restaurants:
+    get:
+      tags:
+        - restaurants
+      description: Get a list of all the restaurants
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurants'   
+        '400':
+          description: Invalid ID supplied
+    post:
+      tags:
+        - restaurants
+      description: Add a new restaurant to the list
+      operationId: addRestaurant
+      requestBody:
+        description: Create a new pet in the store
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Restaurants'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Restaurants'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurants'          
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Restaurants'
+        '400':
+          description: Invalid input
+components:
+  schemas:
+    Restaurants:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "Restaurant DummyName"
+        address:
+            $ref: '#/components/schemas/Address'  
+        url:
+          type: string
+          example: "www.dummy-restaurant1.com.br"
+        menu:
+          type: string
+          example: "Region1"
+        telephone:
+          type: string
+          example: "XX XXXXX-XXXX"
+        priceRange:
+          type: string
+          example: "$$"
+      xml:
+        name: restaurants
+    Address:
+      type: object
+      properties:
+        postalCode:
+          type: string
+          example: "111"
+        streetAddress:
+          type: string
+          example: "Rua Um número 1111"
+        addressLocality:
+          type: string
+          example: "Cidade1"
+        addressRegion:
+          type: string
+          example: "Region1"
+        addressCountry:
+          type: string
+          example: "Country1"
+      xml:
+        name: address
+  requestBodies:
+    Restaurants:
+      description: Restaurant object that needs to be added to the list
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Restaurants'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/Restaurants'
+```
 
 - Codigo completo do Server-side:
 
