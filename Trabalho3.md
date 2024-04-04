@@ -222,6 +222,7 @@ components:
 
 ##### Printscreen da especificação no Swagger Editor
 - TODO...
+
 ![](/images/T3-Implementation.png)
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
