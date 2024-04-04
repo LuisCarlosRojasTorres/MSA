@@ -23,8 +23,8 @@ Professor: Leonardo Guerreiro Azevedo
 Integrantes: 
 - Breno Rage Aboud
 - Wesley Santos da Silva
-- Luis Carlos Rojas Torres-
-- Álvaro
+- Luis Carlos Rojas Torres
+- Álvaro Jr
 
 NOTA: O repositorio deste trabalho se encontra em `https://github.com/LuisCarlosRojasTorres/MSA/blob/main/ReadMe.md` [LINK](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/ReadMe.md)
 
@@ -105,11 +105,62 @@ restaurantsList = [
 }
 ]
 ```
+
+Por outro lado, precisa-se definir os `schemas` para facilitar a definição das interfaces.
+``` yaml
+components:
+  schemas:
+    Restaurants:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "Restaurant DummyName"
+        address:
+            $ref: '#/components/schemas/Address'  
+        url:
+          type: string
+          example: "www.dummy-restaurant1.com.br"
+        menu:
+          type: string
+          example: "Region1"
+        telephone:
+          type: string
+          example: "XX XXXXX-XXXX"
+        priceRange:
+          type: string
+          example: "$$"
+      xml:
+        name: restaurants
+    Address:
+      type: object
+      properties:
+        postalCode:
+          type: string
+          example: "111"
+        streetAddress:
+          type: string
+          example: "Rua Um número 1111"
+        addressLocality:
+          type: string
+          example: "Cidade1"
+        addressRegion:
+          type: string
+          example: "Region1"
+        addressCountry:
+          type: string
+          example: "Country1"
+      xml:
+        name: address
+```
+
 ####  2.1.1. <a name='Inserirumrestaurante'></a>Inserir um restaurante
 
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
-- TODO...
-
+- TODO ...
 ##### Explicação dos passos utilizados para elaborar o contrato
 - TODO...
 
@@ -122,16 +173,62 @@ restaurantsList = [
 ####  2.1.2. <a name='Retornartodososrestaurantes'></a>Retornar todos os restaurantes
 
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
-- TODO...
+- YAML:
+``` yaml
+  /restaurants:
+    get:
+      tags:
+        - restaurants
+      description: Get a list of all the restaurants
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurants'   
+        '400':
+          description: Invalid ID supplied
+```
+- JSON:
+``` json
+"/restaurants": {
+      "get": {
+        "tags": [
+          "restaurants"
+        ],
+        "description": "Get a list of all the restaurants",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Restaurants"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          }
+        }
+      }
+    },
+```
 
 ##### Explicação dos passos utilizados para elaborar o contrato
 - TODO...
 
 ##### Printscreen da especificação no Swagger Editor
 - TODO...
+![](/images/T3-Implementation.png)
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
 - TODO...
+![](/images/T3-Pergunta.png)
+- TODO...
+![](/images/T3-Resposta.png)
 
 ####  2.1.3. <a name='Retornarumrestaurantepeloid'></a>Retornar um restaurante pelo `id`
 
