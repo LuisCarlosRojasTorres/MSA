@@ -31,10 +31,10 @@ NOTA: O repositorio deste trabalho se encontra em `https://github.com/LuisCarlos
 ##  1. <a name='Questesconceituais'></a> Questões conceituais
 
 **1. Defina especificação OpenAPI.**
-- TODO...
+- A OAS(OpenAPI Specification) é uma especificação que define padrões para descrever e documentar APIs REST facilitando o consumo por parte dos clientes de API descrevendo de maneira clara dos os componentes de uma API como endpoints, parametros, payloads e métodos HTTP. A especificação pode ser construída com YAML ou JSON, dois tipos de linguagem de máquina que são lidas pelas ferramentas de exibição da documentação. A OAS é uma iniciativa open-source fomentada pela OpenAPI e mantida pela comunidade.
 
 **2. Qual a vantagem de se especificar o contrato de um serviço**
-- TODO...
+- TODO
 
 ##  2. <a name='Questesprticas'></a> Questões práticas
 - Elabore o contrato OpenAPI para o serviço web RESTful referente a tarefa de implementação de serviços RESTful. Considere a especificação do contrato para os endpoints do serviço e para os respectivos esquemas:
