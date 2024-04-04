@@ -226,9 +226,11 @@ components:
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
 - TODO...  
+
 ![](/images/T3-Pergunta.png)
 
 - TODO...  
+
 ![](/images/T3-Resposta.png)
 
 ####  2.1.3. <a name='Retornarumrestaurantepeloid'></a>Retornar um restaurante pelo `id`
