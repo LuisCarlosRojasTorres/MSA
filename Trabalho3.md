@@ -34,7 +34,7 @@ NOTA: O repositorio deste trabalho se encontra em `https://github.com/LuisCarlos
 - A OAS(OpenAPI Specification) é uma especificação que define padrões para descrever e documentar APIs REST facilitando o consumo por parte dos clientes de API descrevendo de maneira clara dos os componentes de uma API como endpoints, parametros, payloads e métodos HTTP. A especificação pode ser construída com YAML ou JSON, dois tipos de linguagem de máquina que são lidas pelas ferramentas de exibição da documentação. A OAS é uma iniciativa open-source fomentada pela OpenAPI e mantida pela comunidade.
 
 **2. Qual a vantagem de se especificar o contrato de um serviço**
-- TODO
+- Especificar um contrato de um serviço trás várias vantagens técnicas ao processo de desenvolvimento de software como a melhora na interoperabilidade do serviço, também melhora as condições para reuso do serviço. Porém a maior vantagem é no campo organizacional, a especificação do serviço propicia uma melhor comunicação entre os stakeholders envolvidos no uso daquele serviço pois deixa claro quais são as condições de uso como os parametros de entrada e saída, a descrição do serviço, o método HTTP do serviço, o endpoint entre outras melhorias no processo de desenvolvimento.
 
 ##  2. <a name='Questesprticas'></a> Questões práticas
 - Elabore o contrato OpenAPI para o serviço web RESTful referente a tarefa de implementação de serviços RESTful. Considere a especificação do contrato para os endpoints do serviço e para os respectivos esquemas:
