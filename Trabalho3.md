@@ -266,30 +266,195 @@ components:
 ####  2.1.5. <a name='Atualizarrestauranteporexemploatualizaroendereodorestaurante'></a>Atualizar restaurante, por exemplo, atualizar o endereço do restaurante
 
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
-- TODO...
+- YAML:
+``` yaml
+/restaurants/{restaurant_id}:
+  put:
+    tags:
+      - restaurants
+    summary: Update a restaurant
+    description: Updates the information of a specific restaurant.
+    operationId: updateRestaurant
+    parameters:
+      - name: restaurant_id
+        in: path
+        description: ID of the restaurant to update
+        required: true
+        schema:
+          type: integer
+    requestBody:
+      description: Restaurant object to update
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Restaurants'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/Restaurants'
+    responses:
+      '200':
+        description: Restaurant updated successfully
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Restaurants'
+      '400':
+        description: Invalid input
+      '404':
+        description: Restaurant not found
+
+```
+- JSON:
+``` json
+{
+  "/restaurants/{restaurant_id}": {
+    "put": {
+      "tags": [
+        "restaurants"
+      ],
+      "summary": "Update a restaurant",
+      "description": "Updates the information of a specific restaurant.",
+      "operationId": "updateRestaurant",
+      "parameters": [
+        {
+          "name": "restaurant_id",
+          "in": "path",
+          "description": "ID of the restaurant to update",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "requestBody": {
+        "description": "Restaurant object to update",
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Restaurants"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/Restaurants"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Restaurant updated successfully",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Restaurants"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Invalid input"
+        },
+        "404": {
+          "description": "Restaurant not found"
+        }
+      }
+    }
+  }
+}
+
+```
+
+
+
 
 ##### Explicação dos passos utilizados para elaborar o contrato
 - TODO...
 
 ##### Printscreen da especificação no Swagger Editor
-- TODO...
+- ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/68e6692c-733d-49f7-96b4-a8459ddfab41)
+
+...
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
-- TODO...
+- ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/ebc26960-4916-410f-be9c-47631af0f1be)
+![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/2932218e-b5d1-49f8-87b1-c5fbcee0519e)
+
+...
 
 ####  2.1.6. <a name='Apagarumrestaurantepeloseuid'></a>Apagar um restaurante pelo seu `id`
 
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
-- TODO...
+- YAML:
+``` yaml
+  delete:
+      tags:
+        - restaurants
+      summary: Delete a restaurant by ID
+      description: Deletes a restaurant specified by its ID.
+      operationId: deleteRestaurant
+      parameters:
+        - name: restaurant_id
+          in: path
+          description: ID of the restaurant to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Restaurant deleted successfully
+        '404':
+          description: Restaurant not found
+```
+- JSON:
+``` json
+{
+  "/restaurants/{restaurant_id}": {
+    "delete": {
+      "tags": [
+        "restaurants"
+      ],
+      "summary": "Delete a restaurant by ID",
+      "description": "Deletes a restaurant specified by its ID.",
+      "operationId": "deleteRestaurant",
+      "parameters": [
+        {
+          "name": "restaurant_id",
+          "in": "path",
+          "description": "ID of the restaurant to delete",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "responses": {
+        "204": {
+          "description": "Restaurant deleted successfully"
+        },
+        "404": {
+          "description": "Restaurant not found"
+        }
+      }
+    }
+  }
+}
+
+```
+...
 
 ##### Explicação dos passos utilizados para elaborar o contrato
 - TODO...
 
 ##### Printscreen da especificação no Swagger Editor
-- TODO...
+- ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/8ad4f9de-4dcd-4334-8524-0f5fdb8157eb)
+
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
-- TODO...
+- ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/cf222edd-1865-400b-89ed-f92b74af6714)
+...
 
 ##  3. <a name='Anexo'></a> Anexo
 - YAML completo
