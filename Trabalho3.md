@@ -371,7 +371,19 @@ components:
 
 
 ##### Explicação dos passos utilizados para elaborar o contrato
-- TODO...
+- Tags (tags): As tags são usadas para agrupar operações relacionadas. Neste caso, a operação PUT também está associada à tag "restaurants".
+
+- Summary (summary): O resumo fornece uma breve descrição do que a operação faz. No caso da operação PUT, o resumo indica que ela é usada para atualizar um restaurante.
+
+- Description (description): A descrição fornece detalhes adicionais sobre o que a operação faz. Aqui, descreve-se que a operação PUT é responsável por atualizar as informações de um restaurante específico.
+
+- OperationId (operationId): O operationId é um identificador único para a operação. Neste caso, o operationId é "updateRestaurant".
+
+- Parameters (parameters): Os parâmetros especificam quais informações a operação espera receber. No exemplo do PUT, temos um parâmetro de caminho (path parameter) chamado restaurant_id, que identifica o restaurante a ser atualizado.
+
+- Request Body (requestBody): O requestBody descreve o corpo da solicitação que a operação espera receber. No PUT, isso geralmente inclui os dados que serão usados para atualizar o restaurante. Pode ser JSON, XML ou outro formato.
+
+- Responses (responses): As respostas definem os códigos de status HTTP que a operação pode retornar, juntamente com uma descrição de cada código. No exemplo do PUT, temos respostas para sucesso (código 200) e para casos de entrada inválida (código 400) ou restaurante não encontrado (código 404)....
 
 ##### Printscreen da especificação no Swagger Editor
 - ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/68e6692c-733d-49f7-96b4-a8459ddfab41)
@@ -379,8 +391,11 @@ components:
 ...
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
-- ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/ebc26960-4916-410f-be9c-47631af0f1be)
-![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/2932218e-b5d1-49f8-87b1-c5fbcee0519e)
+- ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/c87fbb6f-fbed-485d-9648-b57f980d0597)
+  ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/761d2e87-6f75-498a-862d-1c2a2a8a910f)
+
+
+
 
 ...
 
@@ -446,7 +461,22 @@ components:
 ...
 
 ##### Explicação dos passos utilizados para elaborar o contrato
-- TODO...
+- Tags (tags): As tags são utilizadas para agrupar operações relacionadas em categorias. No exemplo, a operação DELETE está associada à tag "restaurants", 
+indicando que esta operação pertence ao contexto dos restaurantes.
+	
+- Summary (summary): O resumo fornece uma breve descrição do que a operação faz. 
+	
+- Description (description): A descrição fornece uma explicação mais detalhada sobre a operação.
+ No exemplo, descreve-se que a operação DELETE é responsável por excluir um restaurante específico com base no seu ID.
+	
+- OperationId (operationId): O operationId é um identificador único para a operação. 
+Ele pode ser usado para fazer referência à operação em outros lugares da documentação ou do código. Neste caso, o operationId é "deleteRestaurant".
+	
+- Parameters (parameters): Parâmetros são informações que a operação espera receber. No DELETE, geralmente especificamos parâmetros de caminho (path parameters) para identificar o recurso a ser excluído. 
+Aqui, temos o parâmetro restaurant_id no caminho, indicando o ID do restaurante a ser excluído.
+	
+- Responses (responses): As respostas definem os possíveis códigos de status HTTP que a operação pode retornar, juntamente com uma descrição do que cada código significa. 
+No exemplo, temos duas respostas possíveis: 204, indicando que o restaurante foi excluído com sucesso, e 404, indicando que o restaurante não foi encontrado....
 
 ##### Printscreen da especificação no Swagger Editor
 - ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/8ad4f9de-4dcd-4334-8524-0f5fdb8157eb)
