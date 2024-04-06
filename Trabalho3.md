@@ -166,7 +166,7 @@ components:
       description: Add a new restaurant to the list
       operationId: addRestaurant
       requestBody:
-        description: Create a new pet in the store
+        description: Create a new restaurant in the list
         content:
           application/json:
             schema:
@@ -198,7 +198,7 @@ components:
     "description": "Add a new restaurant to the list",
     "operationId": "addRestaurant",
     "requestBody": {
-      "description": "Create a new pet in the store",
+      "description": "Create a new restaurant in the list",
       "content": {
         "application/json": {
           "schema": {
@@ -237,7 +237,11 @@ components:
 }  
 ```
 ##### Explicação dos passos utilizados para elaborar o contrato
-- TODO...
+- Tags (`tags`): As tags são usadas para agrupar operações relacionadas. Neste caso, a operação `POST` também está associada à tag `restaurants`.
+- Description (`description`): A descrição fornece detalhes adicionais sobre o que a operação faz. Aqui, descreve-se que a operação `POST` é responsável por inserir um restaurant à lista de restaurantes.
+- OperationId (`operationId`): O `operationId` é um identificador único para a operação. Neste caso, o `operationId` é `addRestaurant`.
+- Request Body (`requestBody`): O requestBody descreve o corpo da solicitação que a operação espera receber. No `POST`, é um objeto `restaurant` definido no `schema Restaurants`. Pode ser JSON, XML ou outro formato.
+- Responses (`responses`): As respostas definem os códigos de status HTTP que a operação pode retornar, juntamente com uma descrição de cada código. No exemplo do `POST`, temos respostas para sucesso (código 200) e para casos de entrada inválida (código 400) ou restaurante não encontrado (código 404)....
 
 ##### Printscreen da especificação no Swagger Editor
 
@@ -300,7 +304,10 @@ components:
 ```
 
 ##### Explicação dos passos utilizados para elaborar o contrato
-- TODO...
+- Tags (`tags`): As tags são usadas para agrupar operações relacionadas. Neste caso, a operação `GET` também está associada à tag `restaurants`.
+- Description (`description`): A descrição fornece detalhes adicionais sobre o que a operação faz. Aqui, descreve-se que a operação `GET` é responsável por obter a lista de todos os restaurantes.
+- OperationId (`operationId`): O `operationId` é um identificador único para a operação. Neste caso, o `operationId` é `addRestaurant`.
+- Responses (`responses`): As respostas definem os códigos de status HTTP que a operação pode retornar, juntamente com uma descrição de cada código. No exemplo do `POST`, temos respostas para sucesso (código 200) e para casos de entrada inválida (código 400) ou restaurante não encontrado (código 404).
 
 ##### Printscreen da especificação no Swagger Editor
 
@@ -776,7 +783,7 @@ No exemplo, temos duas respostas possíveis: 204, indicando que o restaurante fo
 - Printscreen ao de executar o comando `DELETE`
 
 ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/cf222edd-1865-400b-89ed-f92b74af6714)
-...
+
 
 ##  3. <a name='Anexo'></a> Anexo
 - Codigo completo do Server-side:
