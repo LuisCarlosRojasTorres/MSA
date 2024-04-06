@@ -240,16 +240,15 @@ components:
 - TODO...
 
 ##### Printscreen da especificação no Swagger Editor
-- TODO...
 
 ![](/images/T3_2_1_1_Implementation.png)
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
-- TODO...  
+- Printscreen antes de executar o comando `POST` 
 
 ![](/images/T3_2_1_1_Execution1.png)
 
-- TODO...  
+- Printscreen depois de executar o comando `POST` 
 
 ![](/images/T3_2_1_1_Execution2.png)
 
@@ -304,16 +303,15 @@ components:
 - TODO...
 
 ##### Printscreen da especificação no Swagger Editor
-- TODO...
 
 ![](/images/T3_2_1_2_Implementation.png)
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
-- TODO...  
+- Printscreen antes de executar o comando `GET` 
 
 ![](/images/T3_2_1_2_Execution1.png)
 
-- TODO...  
+- Printscreen depois de executar o comando `GET` 
 
 ![](/images/T3_2_1_2_Execution2.png)
 
@@ -428,7 +426,12 @@ components:
 ![](/images/T3-GETID-EDIT.png)
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
+- Printscreen antes de executar o comando `GET` 
+
 ![](/images/T3-GETID-SW-R.png)
+
+- Printscreen depois de executar o comando `GET` 
+
 ![](/images/T3-GETID-SW-S.png)
 
 ####  2.1.4. <a name='Consultarrestaurantepelosatributosdoendereoporexemploconsultarpelacidaderetornandoosrestaurantesexistentesnacidade'></a>Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade
@@ -537,11 +540,18 @@ components:
 - TODO...
 
 ##### Printscreen da especificação no Swagger Editor
-- TODO...
+
 ![](/images/T3-GETAD-EDIT.png)
+
 ##### Printscreen da execução do serviço empregando o Swagger Editor
+- Printscreen antes de executar o comando `GET` 
+
 ![](/images/T3-GETAD-SW-R.png)
+
+- Printscreen depois de executar o comando `GET`
+
 ![](/images/T3-GETAD-SW-S.png)
+
 ####  2.1.5. <a name='Atualizarrestauranteporexemploatualizaroendereodorestaurante'></a>Atualizar restaurante, por exemplo, atualizar o endereço do restaurante
 
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
@@ -645,10 +655,6 @@ components:
 }
 
 ```
-
-
-
-
 ##### Explicação dos passos utilizados para elaborar o contrato
 - Tags (tags): As tags são usadas para agrupar operações relacionadas. Neste caso, a operação PUT também está associada à tag "restaurants".
 
@@ -670,8 +676,13 @@ components:
 ...
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
-- ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/c87fbb6f-fbed-485d-9648-b57f980d0597)
-  ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/761d2e87-6f75-498a-862d-1c2a2a8a910f)
+- Printscreen antes de executar o comando `PUT`
+
+![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/c87fbb6f-fbed-485d-9648-b57f980d0597)
+
+- Printscreen depois de executar o comando `PUT
+
+![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/761d2e87-6f75-498a-862d-1c2a2a8a910f)
 
 
 
@@ -762,7 +773,9 @@ No exemplo, temos duas respostas possíveis: 204, indicando que o restaurante fo
 
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
-- ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/cf222edd-1865-400b-89ed-f92b74af6714)
+- Printscreen ao de executar o comando `DELETE`
+
+![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/cf222edd-1865-400b-89ed-f92b74af6714)
 ...
 
 ##  3. <a name='Anexo'></a> Anexo
