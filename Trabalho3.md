@@ -238,31 +238,228 @@ components:
 ####  2.1.3. <a name='Retornarumrestaurantepeloid'></a>Retornar um restaurante pelo `id`
 
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
-- TODO...
+- YAML:
+``` yaml
+/restaurants/{restaurant_id}:
+  get:
+    tags:
+      - restaurants
+    summary: Get restaurant by ID
+    description: Returns a single restaurant
+    operationId: restaurant_id
+    parameters:
+      - name: restaurant_addr
+        in: path
+        description: ID of the restaurant to return
+        required: true
+        schema:
+          type: string
+    requestBody:
+      description: ID of the restaurant to return
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Restaurants'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/Restaurants'
+    responses:
+      '200':
+        description: A single restaurant
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Restaurants'
+      '400':
+        description: Invalid input
+      '404':
+        description: Restaurant not found
+
+```
+- JSON:
+``` json
+{
+  "/restaurants/{getRestaurantById}": {
+    "put": {
+      "tags": [
+        "restaurants"
+      ],
+      "summary": "Get restaurant by ID",
+      "description": "Returns a single restaurant..",
+      "operationId": "findRestaurant",
+      "parameters": [
+        {
+          "name": "restaurant_id",
+          "in": "path",
+          "description": "ID of the restaurant to return",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "requestBody": {
+        "description": "single restaurant request body",
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Restaurants"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/Restaurants"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "A single restaurant",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Restaurants"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Invalid input"
+        },
+        "404": {
+          "description": "Restaurant not found"
+        }
+      }
+    }
+  }
+}
+
+```
 
 ##### Explicação dos passos utilizados para elaborar o contrato
 - TODO...
 
 ##### Printscreen da especificação no Swagger Editor
-- TODO...
+![](/images/T3-GETID-EDIT.png)
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
-- TODO...
+![](/images/T3-GETID-SW-R.png)
+![](/images/T3-GETID-SW-S.png)
 
 ####  2.1.4. <a name='Consultarrestaurantepelosatributosdoendereoporexemploconsultarpelacidaderetornandoosrestaurantesexistentesnacidade'></a>Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade
 
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
-- TODO...
+``` yaml
+/restaurants/{restaurant_addr}:
+  get:
+    tags:
+      - restaurants
+    summary: Get restaurants by city
+    description: Returns a list of restaurants in a specific city.
+    operationId: restaurant_addr
+    parameters:
+      - name: restaurant_addr
+        in: path
+        description: City name to filter restaurants
+        required: true
+        schema:
+          type: string
+    requestBody:
+      description: Restaurant object to restaurant_addr
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Restaurants'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/Restaurants'
+    responses:
+      '200':
+        description: A list of restaurants in the specified city
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Restaurants'
+      '400':
+        description: Invalid input
+      '404':
+        description: Restaurant not found
 
+```
+- JSON:
+``` json
+{
+  "/restaurants/{restaurant_addr}": {
+    "put": {
+      "tags": [
+        "restaurants"
+      ],
+      "summary": " Get restaurants by city",
+      "description": "Returns a list of restaurants in a specific city.",
+      "operationId": "getRestaurant",
+      "parameters": [
+        {
+          "name": "restaurant_addr",
+          "in": "path",
+          "description": "City name to filter restaurants",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "requestBody": {
+        "description": "A list of restaurants in the specified city",
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Restaurants"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/Restaurants"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Restaurant updated successfully",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Restaurants"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Invalid input"
+        },
+        "404": {
+          "description": "Restaurant not found"
+        }
+      }
+    }
+  }
+}
+
+```
 ##### Explicação dos passos utilizados para elaborar o contrato
 - TODO...
 
 ##### Printscreen da especificação no Swagger Editor
 - TODO...
-
+![](/images/T3-GETAD-EDIT.png)
 ##### Printscreen da execução do serviço empregando o Swagger Editor
-- TODO...
-
+![](/images/T3-GETAD-SW-R.png)
+![](/images/T3-GETAD-SW-S.png)
 ####  2.1.5. <a name='Atualizarrestauranteporexemploatualizaroendereodorestaurante'></a>Atualizar restaurante, por exemplo, atualizar o endereço do restaurante
 
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
