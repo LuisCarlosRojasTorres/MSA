@@ -678,7 +678,7 @@ components:
 - Responses (responses): As respostas definem os códigos de status HTTP que a operação pode retornar, juntamente com uma descrição de cada código. No exemplo do PUT, temos respostas para sucesso (código 200) e para casos de entrada inválida (código 400) ou restaurante não encontrado (código 404)....
 
 ##### Printscreen da especificação no Swagger Editor
-- ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/68e6692c-733d-49f7-96b4-a8459ddfab41)
+![Screenshot 2024-04-07 at 18 48 54](https://github.com/LuisCarlosRojasTorres/MSA/assets/11539304/b7515f1d-6584-4dfb-91ad-d54a52cf2351)
 
 ...
 
@@ -686,8 +686,6 @@ components:
 - Printscreen antes de executar o comando `PUT`
 
 ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/c87fbb6f-fbed-485d-9648-b57f980d0597)
-
-- Printscreen depois de executar o comando `PUT
 
 ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/761d2e87-6f75-498a-862d-1c2a2a8a910f)
 
