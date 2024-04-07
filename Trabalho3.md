@@ -701,58 +701,60 @@ components:
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
 - YAML:
 ``` yaml
-  delete:
-      tags:
-        - restaurants
-      summary: Delete a restaurant by ID
-      description: Deletes a restaurant specified by its ID.
-      operationId: deleteRestaurant
-      parameters:
-        - name: restaurant_id
-          in: path
-          description: ID of the restaurant to delete
-          required: true
-          schema:
-            type: integer
-      responses:
-        '204':
-          description: Restaurant deleted successfully
-        '404':
-          description: Restaurant not found
+  paths:
+  /restaurants/{restaurant_id}:      
+      delete:
+        tags:
+          - restaurants
+        summary: Delete a restaurant by ID
+        description: Deletes a restaurant specified by its ID.
+        operationId: deleteRestaurant
+        parameters:
+          - name: restaurant_id
+            in: path
+            description: ID of the restaurant to delete
+            required: true
+            schema:
+              type: integer
+        responses:
+          '200':
+            description: Restaurant deleted successfully
+          '404':
+            description: Restaurant not found
 ```
 - JSON:
 ``` json
-{
-  "/restaurants/{restaurant_id}": {
-    "delete": {
-      "tags": [
-        "restaurants"
-      ],
-      "summary": "Delete a restaurant by ID",
-      "description": "Deletes a restaurant specified by its ID.",
-      "operationId": "deleteRestaurant",
-      "parameters": [
-        {
-          "name": "restaurant_id",
-          "in": "path",
-          "description": "ID of the restaurant to delete",
-          "required": true,
-          "schema": {
-            "type": "integer"
+"paths": {
+    "/restaurants/{restaurant_id}": {
+      "delete": {
+        "tags": [
+          "restaurants"
+        ],
+        "summary": "Delete a restaurant by ID",
+        "description": "Deletes a restaurant specified by its ID.",
+        "operationId": "deleteRestaurant",
+        "parameters": [
+          {
+            "name": "restaurant_id",
+            "in": "path",
+            "description": "ID of the restaurant to delete",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
           }
-        }
-      ],
-      "responses": {
-        "204": {
-          "description": "Restaurant deleted successfully"
-        },
-        "404": {
-          "description": "Restaurant not found"
+        ],
+        "responses": {
+          "200": {
+            "description": "Restaurant deleted successfully"
+          },
+          "404": {
+            "description": "Restaurant not found"
+          }
         }
       }
     }
   }
-}
 
 ```
 ...
@@ -776,13 +778,13 @@ Aqui, temos o parâmetro restaurant_id no caminho, indicando o ID do restaurante
 No exemplo, temos duas respostas possíveis: 204, indicando que o restaurante foi excluído com sucesso, e 404, indicando que o restaurante não foi encontrado....
 
 ##### Printscreen da especificação no Swagger Editor
-- ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/8ad4f9de-4dcd-4334-8524-0f5fdb8157eb)
+![Screenshot 2024-04-07 at 18 45 58](https://github.com/LuisCarlosRojasTorres/MSA/assets/11539304/17fa1a02-72be-406a-8d89-7b92dbf19ce6)
 
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
 - Printscreen ao de executar o comando `DELETE`
 
-![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/cf222edd-1865-400b-89ed-f92b74af6714)
+![Screenshot 2024-04-07 at 18 43 17](https://github.com/LuisCarlosRojasTorres/MSA/assets/11539304/eeacbe0a-a49a-4210-b495-74de791b6957)
 
 
 ##  3. <a name='Anexo'></a> Anexo
