@@ -687,7 +687,7 @@ components:
 
 ![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/c87fbb6f-fbed-485d-9648-b57f980d0597)
 
-![image](https://github.com/LuisCarlosRojasTorres/MSA/assets/160053344/761d2e87-6f75-498a-862d-1c2a2a8a910f)
+![Screenshot 2024-04-07 at 18 49 05](https://github.com/LuisCarlosRojasTorres/MSA/assets/11539304/defcae77-3a57-4131-a8e7-bd2491e65775)
 
 
 
