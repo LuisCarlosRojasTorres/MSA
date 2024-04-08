@@ -427,101 +427,75 @@ paths:
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
 ``` yaml
 /restaurants/{restaurant_addr}:
-  get:
-    tags:
-      - restaurants
-    summary: Get restaurants by city
-    description: Returns a list of restaurants in a specific city.
-    operationId: getRestaurantsByCity
-    parameters:
-      - name: restaurant_addr
-        in: path
-        description: City name to filter restaurants
-        required: true
-        schema:
-          type: string
-    requestBody:
-      description: Restaurant object to restaurant_addr
-      required: true
-      content:
-        application/json:
+    get:
+      tags:
+        - restaurants
+      summary: Get restaurants by city
+      description: Returns a list of restaurants in a specific city.
+      operationId: getRestaurantsByCity
+      parameters:
+        - name: restaurant_addr
+          in: path
+          description: City name to filter restaurants
+          required: true
           schema:
-            $ref: '#/components/schemas/Restaurants'
-        application/xml:
-          schema:
-            $ref: '#/components/schemas/Restaurants'
-    responses:
-      '200':
-        description: A list of restaurants in the specified city
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Restaurants'
-      '400':
-        description: Invalid input
-      '404':
-        description: Restaurant not found
+            type: string
+      responses:
+        '200':
+          description: A list of restaurants in the specified city
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurants'
+        '400':
+          description: Invalid input
+        '404':
+          description: Restaurant not found
 
 ```
 - JSON:
 ``` json
-{
-  "/restaurants/{restaurant_addr}": {
-    "get": {
-      "tags": [
-        "restaurants"
-      ],
-      "summary": " Get restaurants by city",
-      "description": "Returns a list of restaurants in a specific city.",
-      "operationId": "getRestaurantsByCity",
-      "parameters": [
-        {
-          "name": "restaurant_addr",
-          "in": "path",
-          "description": "City name to filter restaurants",
-          "required": true,
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
-      "requestBody": {
-        "description": "City name to filter restaurants and retrieve a list of restaurants in the specified city.",
-        "required": true,
-        "content": {
-          "application/json": {
+  "paths": {
+    "/restaurants/{restaurant_addr}": {
+      "get": {
+        "tags": [
+          "restaurants"
+        ],
+        "summary": "Get restaurants by city",
+        "description": "Returns a list of restaurants in a specific city.",
+        "operationId": "getRestaurantsByCity",
+        "parameters": [
+          {
+            "name": "restaurant_addr",
+            "in": "path",
+            "description": "City name to filter restaurants",
+            "required": true,
             "schema": {
-              "$ref": "#/components/schemas/Restaurants"
-            }
-          },
-          "application/xml": {
-            "schema": {
-              "$ref": "#/components/schemas/Restaurants"
+              "type": "string"
             }
           }
-        }
-      },
-      "responses": {
-        "200": {
-          "description": "A list of restaurants in the specified city",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Restaurants"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of restaurants in the specified city",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Restaurants"
+                }
               }
             }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Restaurant not found"
           }
-        },
-        "400": {
-          "description": "Invalid input"
-        },
-        "404": {
-          "description": "Restaurant not found"
         }
       }
     }
   }
-}
 
 ```
 ##### Explicação dos passos utilizados para elaborar o contrato
