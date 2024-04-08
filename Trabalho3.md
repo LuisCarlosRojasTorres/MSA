@@ -367,8 +367,8 @@ components:
 - JSON:
 ``` json
 {
-  "/restaurants/{getRestaurantById}": {
-    "put": {
+  "/restaurants/{restaurant_id}": {
+    "get": {
       "tags": [
         "restaurants"
       ],
@@ -427,7 +427,14 @@ components:
 ```
 
 ##### Explicação dos passos utilizados para elaborar o contrato
-- TODO...
+
+- Tags (tags): As tags são utilizadas para agrupar operações relacionadas. Neste caso, a operação GET também está associada à tag restaurants.
+- Summary (summary): O sumário fornece uma descrição breve e clara da funcionalidade da operação. Aqui, é indicado que a operação GET é responsável por obter um restaurante com base em seu ID.
+- Description (description): A descrição fornece detalhes adicionais sobre o propósito da operação. Neste caso, descreve-se que a operação GET permite recuperar um restaurante específico com base em seu identificador único (ID).
+- OperationId (operationId): O operationId é um identificador único para a operação. Aqui, o operationId é definido como findRestaurant.
+- Parameters (parameters): Os parâmetros especificam as informações necessárias para a operação. No exemplo do GET, o parâmetro de caminho 
+- restaurant_id é essencial para identificar o restaurante desejado.
+- Responses (responses): As respostas definem os códigos de status HTTP que a operação pode retornar, juntamente com uma descrição para cada código. No caso do GET, são fornecidas respostas para sucesso (código 200), entrada inválida (código 400) e restaurante não encontrado (código 404).
 
 ##### Printscreen da especificação no Swagger Editor
 ![](/images/T3-GETID-EDIT.png)
@@ -451,7 +458,7 @@ components:
       - restaurants
     summary: Get restaurants by city
     description: Returns a list of restaurants in a specific city.
-    operationId: restaurant_addr
+    operationId: getRestaurantsByCity
     parameters:
       - name: restaurant_addr
         in: path
@@ -486,13 +493,13 @@ components:
 ``` json
 {
   "/restaurants/{restaurant_addr}": {
-    "put": {
+    "get": {
       "tags": [
         "restaurants"
       ],
       "summary": " Get restaurants by city",
       "description": "Returns a list of restaurants in a specific city.",
-      "operationId": "getRestaurant",
+      "operationId": "getRestaurantsByCity",
       "parameters": [
         {
           "name": "restaurant_addr",
@@ -505,7 +512,7 @@ components:
         }
       ],
       "requestBody": {
-        "description": "A list of restaurants in the specified city",
+        "description": "City name to filter restaurants and retrieve a list of restaurants in the specified city.",
         "required": true,
         "content": {
           "application/json": {
@@ -522,7 +529,7 @@ components:
       },
       "responses": {
         "200": {
-          "description": "Restaurant updated successfully",
+          "description": "A list of restaurants in the specified city",
           "content": {
             "application/json": {
               "schema": {
@@ -544,7 +551,14 @@ components:
 
 ```
 ##### Explicação dos passos utilizados para elaborar o contrato
-- TODO...
+- Tags (tags): As tags são utilizadas para agrupar operações relacionadas. Neste caso, a operação GET também está associada à tag restaurants.
+- Summary (summary): O sumário fornece uma descrição breve e clara da funcionalidade da operação. Aqui, é indicado que a operação GET é responsável por obter uma lista de restaurantes com base na cidade.
+- Description (description): A descrição fornece detalhes adicionais sobre o propósito da operação. Neste caso, descreve-se que a operação GET permite recuperar uma lista de restaurantes localizados em uma cidade específica.
+- OperationId (operationId): O operationId é um identificador único para a operação. Aqui, o operationId é definido como getRestaurantsByCity.
+- Parameters (parameters): Os parâmetros especificam as informações necessárias para a operação. No exemplo do GET, o parâmetro de caminho 
+ restaurant_addr é essencial para filtrar os restaurantes pela cidade.
+- Request Body (requestBody): O requestBody descreve o corpo da solicitação que a operação espera receber. No GET, isso inclui o nome da cidade para filtrar os restaurantes e recuperar uma lista dos restaurantes na cidade especificada. Pode ser JSON, XML ou outro formato.
+- Responses (responses): As respostas definem os códigos de status HTTP que a operação pode retornar, juntamente com uma descrição para cada código. No caso do GET, são fornecidas respostas para sucesso (código 200), entrada inválida (código 400) e restaurante não encontrado (código 404).
 
 ##### Printscreen da especificação no Swagger Editor
 
