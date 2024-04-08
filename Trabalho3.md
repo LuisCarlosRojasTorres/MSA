@@ -367,8 +367,8 @@ components:
 - JSON:
 ``` json
 {
-  "/restaurants/{getRestaurantById}": {
-    "put": {
+  "/restaurants/{restaurant_id}": {
+    "get": {
       "tags": [
         "restaurants"
       ],
