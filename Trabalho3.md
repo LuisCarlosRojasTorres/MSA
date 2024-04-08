@@ -26,7 +26,7 @@ Integrantes:
 - Luis Carlos Rojas Torres
 - Álvaro Jr
 
-NOTA: O repositorio deste trabalho se encontra em `https://github.com/LuisCarlosRojasTorres/MSA/blob/main/ReadMe.md` [LINK](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/ReadMe.md)
+NOTA: O repositorio deste trabalho se encontra em `https://github.com/LuisCarlosRojasTorres/MSA/blob/main/Trabalho3.md` [LINK](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/Trabalho3.md)
 
 ##  1. <a name='Questesconceituais'></a> Questões conceituais
 
