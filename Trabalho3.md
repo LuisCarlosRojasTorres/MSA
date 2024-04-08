@@ -327,102 +327,76 @@ components:
 ##### Especificação OpenAPI do serviço em formato YAML e em formato JSON
 - YAML:
 ``` yaml
-/restaurants/{restaurant_id}:
-  get:
-    tags:
-      - restaurants
-    summary: Get restaurant by ID
-    description: Returns a single restaurant
-    operationId: restaurant_id
-    parameters:
-      - name: restaurant_addr
-        in: path
-        description: ID of the restaurant to return
-        required: true
-        schema:
-          type: string
-    requestBody:
-      description: ID of the restaurant to return
-      required: true
-      content:
-        application/json:
+paths:
+  /restaurants/{restaurant_id}:
+    get:
+      tags:
+        - restaurants
+      summary: Get restaurant by ID
+      description: Returns a single restaurant
+      operationId: restaurant_id
+      parameters:
+        - name: restaurant_id
+          in: path
+          description: ID of the restaurant to return
+          required: true
           schema:
-            $ref: '#/components/schemas/Restaurants'
-        application/xml:
-          schema:
-            $ref: '#/components/schemas/Restaurants'
-    responses:
-      '200':
-        description: A single restaurant
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Restaurants'
-      '400':
-        description: Invalid input
-      '404':
-        description: Restaurant not found
-
+            type: string
+      responses:
+        '200':
+          description: A single restaurant
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurants'
+        '400':
+          description: Invalid input
+        '404':
+          description: Restaurant not found
 ```
 - JSON:
 ``` json
-{
-  "/restaurants/{restaurant_id}": {
-    "get": {
-      "tags": [
-        "restaurants"
-      ],
-      "summary": "Get restaurant by ID",
-      "description": "Returns a single restaurant..",
-      "operationId": "findRestaurant",
-      "parameters": [
-        {
-          "name": "restaurant_id",
-          "in": "path",
-          "description": "ID of the restaurant to return",
-          "required": true,
-          "schema": {
-            "type": "integer"
-          }
-        }
-      ],
-      "requestBody": {
-        "description": "single restaurant request body",
-        "required": true,
-        "content": {
-          "application/json": {
+"paths": {
+    "/restaurants/{restaurant_id}": {
+      "get": {
+        "tags": [
+          "restaurants"
+        ],
+        "summary": "Get restaurant by ID",
+        "description": "Returns a single restaurant",
+        "operationId": "restaurant_id",
+        "parameters": [
+          {
+            "name": "restaurant_id",
+            "in": "path",
+            "description": "ID of the restaurant to return",
+            "required": true,
             "schema": {
-              "$ref": "#/components/schemas/Restaurants"
-            }
-          },
-          "application/xml": {
-            "schema": {
-              "$ref": "#/components/schemas/Restaurants"
+              "type": "string"
             }
           }
-        }
-      },
-      "responses": {
-        "200": {
-          "description": "A single restaurant",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Restaurants"
+        ],
+        "responses": {
+          "200": {
+            "description": "A single restaurant",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Restaurants"
+                }
               }
             }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Restaurant not found"
           }
-        },
-        "400": {
-          "description": "Invalid input"
-        },
-        "404": {
-          "description": "Restaurant not found"
         }
       }
     }
   }
-}
 
 ```
 
