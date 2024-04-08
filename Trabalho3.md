@@ -53,7 +53,7 @@ NOTA: O repositorio deste trabalho se encontra em `https://github.com/LuisCarlos
 ###  2.1. <a name='Soluo'></a>Solução
 - Para apresentar a solução deste trabalho se utilizara a seguinte data (também utilizada no trabalho anterior):
   
-![](/images/Restaurants.png)
+![image](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/images/Restaurants.png?raw=true)
 
 - Esta data convertida no formato json ficaria da seguinte forma:
 ``` python 
@@ -245,16 +245,16 @@ components:
 
 ##### Printscreen da especificação no Swagger Editor
 
-![](/images/T3_2_1_1_Implementation.png)
+![](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/images/T3_2_1_1_Implementation.png?raw=true)
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
 - Printscreen antes de executar o comando `POST` 
 
-![](/images/T3_2_1_1_Execution1.png)
+![](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/images/T3_2_1_1_Execution1.png?raw=true)
 
 - Printscreen depois de executar o comando `POST` 
 
-![](/images/T3_2_1_1_Execution2.png)
+![](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/images/T3_2_1_1_Execution2.png?raw=true)
 
 ####  2.1.2. <a name='Retornartodososrestaurantes'></a>Retornar todos os restaurantes
 
@@ -311,16 +311,16 @@ components:
 
 ##### Printscreen da especificação no Swagger Editor
 
-![](/images/T3_2_1_2_Implementation.png)
+![](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/images/T3_2_1_2_Implementation.png?raw=true)
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
 - Printscreen antes de executar o comando `GET` 
 
-![](/images/T3_2_1_2_Execution1.png)
+![](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/images/T3_2_1_2_Execution1.png?raw=true)
 
 - Printscreen depois de executar o comando `GET` 
 
-![](/images/T3_2_1_2_Execution2.png)
+![](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/images/T3_2_1_2_Execution2.png?raw=true)
 
 ####  2.1.3. <a name='Retornarumrestaurantepeloid'></a>Retornar um restaurante pelo `id`
 
@@ -437,16 +437,16 @@ components:
 - Responses (responses): As respostas definem os códigos de status HTTP que a operação pode retornar, juntamente com uma descrição para cada código. No caso do GET, são fornecidas respostas para sucesso (código 200), entrada inválida (código 400) e restaurante não encontrado (código 404).
 
 ##### Printscreen da especificação no Swagger Editor
-![](/images/T3-GETID-EDIT.png)
+![](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/images/T3-GETID-EDIT.png?raw=true)
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
 - Printscreen antes de executar o comando `GET` 
 
-![](/images/T3-GETID-SW-R.png)
+![](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/images/T3-GETID-SW-R.png?raw=true)
 
 - Printscreen depois de executar o comando `GET` 
 
-![](/images/T3-GETID-SW-S.png)
+![](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/images/T3-GETID-SW-S.png?raw=true)
 
 ####  2.1.4. <a name='Consultarrestaurantepelosatributosdoendereoporexemploconsultarpelacidaderetornandoosrestaurantesexistentesnacidade'></a>Consultar restaurante pelos atributos do endereço, por exemplo, consultar pela cidade retornando os restaurantes existentes na cidade
 
@@ -562,16 +562,16 @@ components:
 
 ##### Printscreen da especificação no Swagger Editor
 
-![](/images/T3-GETAD-EDIT.png)
+![](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/images/T3-GETAD-EDIT.png?raw=true)
 
 ##### Printscreen da execução do serviço empregando o Swagger Editor
 - Printscreen antes de executar o comando `GET` 
 
-![](/images/T3-GETAD-SW-R.png)
+![](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/images/T3-GETAD-SW-R.png?raw=true)
 
 - Printscreen depois de executar o comando `GET`
 
-![](/images/T3-GETAD-SW-S.png)
+![](https://github.com/LuisCarlosRojasTorres/MSA/blob/main/images/T3-GETAD-SW-S.png?raw=true)
 
 ####  2.1.5. <a name='Atualizarrestauranteporexemploatualizaroendereodorestaurante'></a>Atualizar restaurante, por exemplo, atualizar o endereço do restaurante
 
